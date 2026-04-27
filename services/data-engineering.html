@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Data Engineering & AI Ops | SRES Solutions</title>
+
+<!-- Primary SEO -->
+<meta name="description" content="Modern data stacks, pipelines, vector databases, feature stores and MLOps infrastructure built for AI at scale. SRES Solutions." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://sres.solutions/services/data-engineering.html" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sres.solutions/services/data-engineering.html" />
+<meta property="og:site_name" content="SRES Solutions" />
+<meta property="og:title" content="Data Engineering & AI Ops | SRES Solutions" />
+<meta property="og:description" content="Modern data stacks, pipelines, vector databases, feature stores and MLOps infrastructure built for AI at scale. SRES Solutions." />
+<meta property="og:image" content="https://sres.solutions/og-image.png" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Data Engineering & AI Ops | SRES Solutions" />
+<meta name="twitter:description" content="Modern data stacks, pipelines, vector databases, feature stores and MLOps infrastructure built for AI at scale. SRES Solutions." />
+<!-- Schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Data Engineering & AI Ops","provider":{"@type":"Organization","name":"SRES Solutions"},"description":"Production-grade data engineering: lakehouse architecture, streaming pipelines, vector databases, feature stores and MLOps."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sres.solutions/"},{"@type":"ListItem","position":2,"name":"Data Engineering & AI Ops","item":"https://sres.solutions/services/data-engineering.html"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../shared.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+.sp-hero{min-height:56vh;display:flex;align-items:center;padding-top:130px;position:relative;overflow:hidden;}
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+.sp-process{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.deliverable-tag{display:inline-flex;padding:7px 14px;border-radius:8px;background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--primary-light);font-size:13px;font-weight:500;margin:4px;}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0;cursor:pointer;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600;}
+.faq-a{color:var(--muted2);font-size:14px;line-height:1.7;margin-top:12px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-bottom:20px;}
+.breadcrumb a{color:var(--muted2);text-decoration:none;}
+.breadcrumb a:hover{color:var(--primary-light);}
+</style>
+</head>
+<body class="grid-bg">
+<div id="root"></div>
+<script type="text/babel">
+const{useState,useEffect,useRef}=React;
+function useReveal(t=0.1){const r=useRef(null);const[v,sv]=useState(false);useEffect(()=>{const e=r.current;if(!e)return;const o=new IntersectionObserver(([x])=>{if(x.isIntersecting){sv(true);o.disconnect();}},{threshold:t});o.observe(e);return()=>o.disconnect();},[]);return[r,v];}
+
+const DATA={"slug":"data-engineering","title":"Data Engineering & AI Ops","icon":"📊","color":"#F59E0B","tagline":"Build the foundation that AI demands.","hero":"AI Is Only as Good as the Data Beneath It","heroPara":"Most AI projects fail in the data layer — not the model layer. We build production-grade data infrastructure that feeds your AI systems with clean, timely, and trustworthy data at any scale.","badge":"Data Engineering","stats":[{"val":"99.9%","label":"Pipeline uptime SLA"},{"val":"10×","label":"Avg data processing speedup"},{"val":"< 100ms","label":"Real-time latency achieved"},{"val":"60%","label":"Reduction in data costs"}],"whatWeDo":[{"title":"Modern Data Stack Architecture","desc":"Design and implement lakehouse architectures on Databricks, Snowflake, BigQuery, or AWS — purpose-built for AI and analytics workloads."},{"title":"Data Pipeline Engineering","desc":"Batch and streaming pipelines (dbt, Airflow, Spark, Flink) that move, transform, and validate data from any source to any destination, reliably and at scale."},{"title":"Feature Stores","desc":"Centralized feature engineering infrastructure that makes ML features reusable, versioned, and available in real time for model inference."},{"title":"Vector Databases & RAG","desc":"Purpose-built infrastructure for LLM applications — vector embeddings, semantic search, and retrieval-augmented generation pipelines using Pinecone, Weaviate, or pgvector."},{"title":"Data Quality & Observability","desc":"Automated data quality checks, lineage tracking, and observability dashboards (Great Expectations, Monte Carlo) so you always trust your data."},{"title":"MLOps Platform","desc":"End-to-end ML lifecycle management — experiment tracking (MLflow), model registry, CI/CD for models, A/B testing, and production monitoring with drift detection."}],"process":[{"n":"01","title":"Data Audit","desc":"Assess current data sources, quality, schemas, and infrastructure gaps."},{"n":"02","title":"Architecture Design","desc":"Design the target state data platform aligned to your AI and analytics needs."},{"n":"03","title":"Pipeline Build","desc":"Iterative development of ingestion, transformation, and serving layers."},{"n":"04","title":"Operationalise","desc":"Monitoring, alerting, runbooks, and handover to your data team."}],"deliverables":["Data Architecture Blueprint","Production Data Pipelines","Feature Store Setup","Data Quality Framework","Monitoring Dashboards","Data Team Enablement"],"quote":"\"We didn't have data we could trust. SRES built us a foundation that now powers every AI initiative across our business.\"","quoteName":"Priya Sharma, VP Engineering — RetailMax Global","faqs":[{"q":"We already have a data warehouse — can you build on top?","a":"Absolutely. We assess your existing infrastructure and build the minimum necessary changes to make it AI-ready. We never recommend a full rebuild unless truly necessary."},{"q":"Do you work with real-time data?","a":"Yes — we have deep expertise in event streaming with Kafka, Kinesis, and Pub/Sub, and building sub-100ms real-time inference pipelines for fraud detection, personalization, and IoT."},{"q":"Can you train our internal data team?","a":"Yes. Knowledge transfer is built into every engagement. We pair your engineers with ours throughout the build and provide documentation, runbooks, and optional hands-on training."}]};
+
+function Nav(){
+  const[sc,setSc]=useState(false);
+  const[mo,setMo]=useState(false);
+  const[theme,setTheme]=useState('dark');
+  useEffect(()=>{const fn=()=>setSc(window.scrollY>40);window.addEventListener('scroll',fn);return()=>window.removeEventListener('scroll',fn);},[]);
+  useEffect(()=>{document.documentElement.setAttribute('data-theme',theme);},[theme]);
+  return(<>
+    <nav className={sc?'scrolled':''}>
+      <a href="../index.html" className="nav-logo"><div className="nav-logo-mark">SRES</div><span>Solutions</span></a>
+      <ul className="nav-links">
+        <li><a href="../index.html#services" style={{color:'var(--primary-light)'}}>Services</a></li>
+        <li><a href="../case-studies.html">Case Studies</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div style={{display:'flex',gap:10,alignItems:'center'}} className="nav-right-desktop">
+        <button className="theme-toggle" onClick={()=>setTheme(t=>t==='dark'?'light':'dark')}>{theme==='dark'?'☀ Light':'🌙 Dark'}</button>
+        <a href="../contact.html" className="btn-primary" style={{padding:'9px 20px',fontSize:13}}>Get Started →</a>
+      </div>
+      <button className="hamburger" onClick={()=>setMo(o=>!o)}><span></span><span></span><span></span></button>
+    </nav>
+    <div className={`mobile-menu ${mo?'open':''}`}>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../case-studies.html">Case Studies</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+  </>);
+}
+
+function FAQItem({q,a}){
+  const[open,setOpen]=useState(false);
+  return(
+    <div className="faq-item" onClick={()=>setOpen(o=>!o)}>
+      <div className="faq-q">{q}<span style={{color:'var(--primary)',fontSize:20,flexShrink:0,transition:'transform 0.3s',transform:open?'rotate(45deg)':'none'}}>+</span></div>
+      {open&&<div className="faq-a">{a}</div>}
+    </div>
+  );
+}
+
+function App(){
+  return(<>
+    <Nav/>
+    {/* Hero */}
+    <section className="sp-hero">
+      <div style={{position:'absolute',top:'5%',left:'5%',width:500,height:500,borderRadius:'50%',background:`radial-gradient(circle,${DATA.color}18,transparent 65%)`,pointerEvents:'none'}}/>
+      <div className="container" style={{position:'relative',zIndex:1}}>
+        <div className="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span>›</span>
+          <a href="../index.html#services">Services</a>
+          <span>›</span>
+          <span style={{color:'var(--primary-light)'}}>{DATA.title}</span>
+        </div>
+        <div style={{display:'inline-flex',alignItems:'center',gap:8,padding:'5px 14px',borderRadius:100,border:'1px solid var(--glass-border)',background:'var(--glass-bg)',color:'var(--primary-light)',fontSize:11,fontWeight:600,letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:20}}>
+          <span style={{fontSize:16}}>{DATA.icon}</span> {DATA.badge}
+        </div>
+        <h1 style={{fontSize:'clamp(30px,5vw,64px)',fontWeight:800,letterSpacing:'-0.02em',marginBottom:16,maxWidth:760,lineHeight:1.05}}>{DATA.hero}</h1>
+        <p style={{fontSize:'clamp(15px,1.8vw,19px)',color:'var(--text2)',maxWidth:560,lineHeight:1.75,fontWeight:300,marginBottom:40}}>{DATA.heroPara}</p>
+        <div style={{display:'flex',gap:14,flexWrap:'wrap',marginBottom:56}}>
+          <a href="../contact.html" className="btn-primary" style={{fontSize:15,padding:'14px 30px'}}>Book a Strategy Call →</a>
+          <a href="../case-studies.html" className="btn-ghost" style={{fontSize:15,padding:'14px 30px'}}>See Case Studies</a>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(130px,1fr))',gap:0,background:'var(--surface)',border:'1px solid var(--border)',borderRadius:14,overflow:'hidden'}}>
+          {DATA.stats.map((st,i)=>(
+            <div key={i} style={{padding:'18px 16px',borderRight:i<DATA.stats.length-1?'1px solid var(--border)':'none',textAlign:'center'}}>
+              <div style={{fontFamily:'Syne,sans-serif',fontSize:'clamp(18px,2vw,26px)',fontWeight:800,color:'var(--primary-light)',lineHeight:1}}>{st.val}</div>
+              <div style={{fontSize:11,color:'var(--muted)',marginTop:4,lineHeight:1.3}}>{st.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* What We Do */}
+    <section>
+      <div className="container">
+        <div style={{marginBottom:48}}>
+          <div className="section-label">What's Included</div>
+          <h2 style={{fontSize:'clamp(26px,3.5vw,44px)',marginBottom:12}}>Everything you need to <span style={{background:'linear-gradient(135deg,var(--primary-light),var(--accent))',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>succeed.</span></h2>
+        </div>
+        <div className="sp-grid">
+          {DATA.whatWeDo.map((item,i)=>(
+            <div key={i} className="card">
+              <div style={{width:36,height:36,borderRadius:10,background:`${DATA.color}18`,border:`1px solid ${DATA.color}25`,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:13,color:DATA.color,marginBottom:14}}>{String(i+1).padStart(2,'0')}</div>
+              <h3 style={{fontSize:17,fontWeight:700,marginBottom:8}}>{item.title}</h3>
+              <p style={{color:'var(--muted2)',fontSize:13,lineHeight:1.7}}>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Process */}
+    <section style={{background:'linear-gradient(180deg,transparent,var(--surface) 20%,var(--surface) 80%,transparent)'}}>
+      <div className="container">
+        <div style={{marginBottom:40}}>
+          <div className="section-label">How It Works</div>
+          <h2 style={{fontSize:'clamp(24px,3vw,40px)'}}>Our delivery process</h2>
+        </div>
+        <div className="sp-process">
+          {DATA.process.map((step,i)=>(
+            <div key={i} style={{padding:24,background:'var(--surface2)',border:'1px solid var(--border)',borderRadius:16}}>
+              <div style={{width:44,height:44,borderRadius:12,background:'var(--glass-bg)',border:'1px solid var(--glass-border)',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Syne,sans-serif',fontSize:16,fontWeight:800,color:'var(--primary-light)',marginBottom:16}}>{step.n}</div>
+              <h3 style={{fontSize:16,fontWeight:700,marginBottom:8}}>{step.title}</h3>
+              <p style={{color:'var(--muted2)',fontSize:13,lineHeight:1.6}}>{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Deliverables */}
+    <section>
+      <div className="container">
+        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:48,alignItems:'center'}}>
+          <div>
+            <div className="section-label">What You Get</div>
+            <h2 style={{fontSize:'clamp(24px,3vw,40px)',marginBottom:16}}>Your deliverables</h2>
+            <p style={{color:'var(--muted2)',fontSize:15,lineHeight:1.7,marginBottom:24}}>Every engagement produces concrete, documented outputs — not just advice. Here's exactly what you'll have when we're done.</p>
+            <div style={{display:'flex',flexWrap:'wrap',gap:4}}>
+              {DATA.deliverables.map(d=><span key={d} className="deliverable-tag">✓ {d}</span>)}
+            </div>
+          </div>
+          <div style={{background:'var(--glass-bg)',border:'1px solid var(--glass-border)',borderRadius:20,padding:32}}>
+            <div style={{fontSize:32,opacity:0.3,fontFamily:'Georgia,serif',marginBottom:12,color:'var(--primary)'}}>"</div>
+            <p style={{color:'var(--text)',fontSize:16,fontStyle:'italic',lineHeight:1.75,fontWeight:300,marginBottom:16}}>{DATA.quote}</p>
+            <div style={{fontSize:13,color:'var(--muted)',fontWeight:600}}>{DATA.quoteName}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ */}
+    <section style={{paddingBottom:48}}>
+      <div className="container" style={{maxWidth:720}}>
+        <div className="section-label" style={{textAlign:'center'}}>FAQ</div>
+        <h2 style={{fontSize:'clamp(22px,3vw,36px)',textAlign:'center',marginBottom:36}}>Common Questions</h2>
+        {DATA.faqs.map((faq,i)=><FAQItem key={i} q={faq.q} a={faq.a}/>)}
+      </div>
+    </section>
+
+    {/* CTA */}
+    <section style={{paddingTop:0,paddingBottom:80}}>
+      <div className="container">
+        <div style={{background:'var(--glass-bg)',border:'1px solid var(--glass-border)',borderRadius:20,padding:'clamp(32px,5vw,56px)',textAlign:'center'}}>
+          <h2 style={{fontSize:'clamp(22px,3vw,40px)',marginBottom:14}}>Ready to get started?</h2>
+          <p style={{color:'var(--muted2)',fontSize:15,maxWidth:400,margin:'0 auto 28px',lineHeight:1.7}}>Book a free 45-minute consultation to scope your {DATA.title} engagement.</p>
+          <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
+            <a href="../contact.html" className="btn-primary" style={{fontSize:15,padding:'14px 30px'}}>Book a Call →</a>
+            <a href="https://wa.me/919985020218" target="_blank" className="btn-ghost" style={{fontSize:15,padding:'14px 30px',borderColor:'rgba(37,211,102,0.3)',color:'#34D399'}}>📱 WhatsApp Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Footer */}
+    <footer>
+      <div className="container">
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:16}}>
+          <a href="../index.html" className="nav-logo"><div className="nav-logo-mark">SRES</div><span>Solutions</span></a>
+          <div style={{fontSize:12,color:'var(--muted)'}}>© 2025 SRES Solutions. All rights reserved.</div>
+          <a href="https://wa.me/919985020218" target="_blank" style={{color:'#34D399',fontSize:13,textDecoration:'none'}}>📱 +91 99850 20218</a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/919985020218" target="_blank" rel="noopener noreferrer" className="whatsapp-fab" title="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.51 3.58 1.39 5.06L2 22l5.09-1.36C8.53 21.47 10.21 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="rgba(37,211,102,0.9)"/><path d="M17 14.38c-.22.56-1.14 1.06-1.78 1.2-.44.09-1 .16-2.84-.6-2.34-.96-3.88-3.36-4-3.52-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.86-2.02.22-.24.5-.34.66-.34.16 0 .32 0 .46.01.16.01.37-.06.58.45.22.52.74 1.7.81 1.84.07.14.11.3.01.48-.1.18-.15.28-.29.44-.14.16-.29.36-.41.48-.14.14-.29.29-.12.59.17.3.75 1.23 1.62 2.02 1.12 1.01 2.05 1.32 2.35 1.46.3.14.48.11.66-.09.18-.2.74-.86.94-1.16.2-.3.41-.24.68-.13.27.09 1.45.69 1.74.84.29.15.48.22.55.34.07.13-.28.65-1.5.21z" fill="white"/></svg>
+    </a>
+  </>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

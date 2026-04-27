@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Case Studies | SRES Solutions — Real AI Results Across Industries</title>
+
+<!-- Primary SEO -->
+<meta name="description" content="Explore SRES Solutions case studies: $12M fraud savings, 2.5hrs/day clinical documentation, 40% downtime reduction. Real AI results across Finance, Healthcare, Retail, Manufacturing and Technology." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://sres.solutions/case-studies.html" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sres.solutions/case-studies.html" />
+<meta property="og:site_name" content="SRES Solutions" />
+<meta property="og:title" content="Case Studies | SRES Solutions — Real AI Results Across Industries" />
+<meta property="og:description" content="Explore SRES Solutions case studies: $12M fraud savings, 2.5hrs/day clinical documentation, 40% downtime reduction. Real AI results across Finance, Healthcare, Retail, Manufacturing and Technology." />
+<meta property="og:image" content="https://sres.solutions/og-image.png" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Case Studies | SRES Solutions — Real AI Results Across Industries" />
+<meta name="twitter:description" content="Explore SRES Solutions case studies: $12M fraud savings, 2.5hrs/day clinical documentation, 40% downtime reduction. Real AI results across Finance, Healthcare, Retail, Manufacturing and Technology." />
+<!-- Schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"SRES Solutions Case Studies","description":"Real-world AI transformation results delivered by SRES Solutions across Financial Services, Healthcare, Retail, Manufacturing, Technology, and Legal industries."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sres.solutions/"},{"@type":"ListItem","position":2,"name":"Case Studies","item":"https://sres.solutions/case-studies.html"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+.cs-hero { min-height: 50vh; display: flex; align-items: center; padding-top: 120px; position: relative; overflow: hidden; }
+.cs-filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
+.filter-btn { padding: 8px 18px; border-radius: 100px; border: 1px solid var(--border); background: transparent; color: var(--muted2); font-family: 'DM Sans',sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+.filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 4px 16px rgba(131,27,132,0.35); }
+.filter-btn:not(.active):hover { border-color: var(--primary); color: var(--primary-light); }
+.cs-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: all 0.3s; cursor: pointer; }
+.cs-card:hover { border-color: var(--glass-border); transform: translateY(-4px); box-shadow: var(--shadow); }
+.cs-card-header { padding: 28px 28px 0; }
+.cs-card-body { padding: 20px 28px 28px; }
+.cs-stat { display: flex; flex-direction: column; }
+.cs-stat-val { font-family: 'Syne',sans-serif; font-size: 28px; font-weight: 800; color: var(--primary-light); line-height: 1; }
+.cs-stat-label { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.cs-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(12px); z-index: 500; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.cs-modal-box { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; max-width: 720px; width: 100%; max-height: 85vh; overflow-y: auto; position: relative; }
+.cs-modal-box::-webkit-scrollbar { width: 3px; }
+.cs-modal-box::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
+.quote-block { background: var(--glass-bg); border-left: 3px solid var(--primary); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 24px 0; }
+</style>
+</head>
+<body class="grid-bg">
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+function useReveal(t=0.1){const r=useRef(null);const[v,sv]=useState(false);useEffect(()=>{const e=r.current;if(!e)return;const o=new IntersectionObserver(([x])=>{if(x.isIntersecting){sv(true);o.disconnect();}},{threshold:t});o.observe(e);return()=>o.disconnect();},[]);return[r,v];}
+
+const CASES = [
+  {
+    id:1, industry:'Financial Services', tag:'Fraud Detection', color:'#3B82F6',
+    client:'FinanceCore Group', logo:'FC', headline:'Saving $12M Annually with Real-Time AI Fraud Detection',
+    challenge:'FinanceCore was losing over $14M per year to payment fraud while their rule-based system generated thousands of false positives daily — freezing legitimate accounts and angering customers.',
+    solution:'SRES deployed a graph neural network that models transaction relationships in real time, combined with an explainability layer that gives compliance teams instant audit trails for every flagged transaction.',
+    results:[{val:'$12M',label:'Annual fraud savings'},{val:'43%',label:'Fewer false positives'},{val:'99.1%',label:'Fraud catch rate'},{val:'18ms',label:'Average detection latency'}],
+    timeline:'14 weeks', stack:['Graph Neural Networks','Apache Kafka','Redis','Python','AWS SageMaker'],
+    quote:'"SRES Solutions didn\'t just reduce fraud — they rebuilt how we think about transaction risk. The ROI was visible in month two."',
+    quoteName:'Sarah Chen, CTO — FinanceCore Group',
+    process:['Week 1–2: Data audit & fraud pattern analysis','Week 3–6: GNN model architecture & training','Week 7–10: Real-time inference pipeline deployment','Week 11–14: Compliance integration & monitoring setup'],
+  },
+  {
+    id:2, industry:'Healthcare', tag:'Clinical AI', color:'#10B981',
+    client:'HealthFirst Network', logo:'HF', headline:'Giving Doctors 2.5 Hours Back — Every Single Day',
+    challenge:'Clinicians at HealthFirst were spending 35–40% of their shift on documentation, leading to burnout, errors, and reduced patient face time. Existing transcription tools were generic and unusable in clinical contexts.',
+    solution:'SRES built an ambient clinical documentation AI trained on HealthFirst\'s own EHR data and clinical terminology. It transcribes, structures, and auto-populates clinical notes with HIPAA-compliant on-premise processing.',
+    results:[{val:'2.5hrs',label:'Saved per clinician per day'},{val:'94%',label:'Note accuracy rate'},{val:'31%',label:'Readmission reduction'},{val:'4.8/5',label:'Clinician satisfaction'}],
+    timeline:'20 weeks', stack:['Whisper ASR','Fine-tuned LLM','HL7 FHIR','Azure Private Cloud','Epic Integration'],
+    quote:'"For the first time in years, I\'m leaving the hospital at a reasonable hour. This technology gave me my life back."',
+    quoteName:'Dr. Aisha Patel, Internal Medicine — HealthFirst',
+    process:['Week 1–3: Clinical workflow mapping & EHR data audit','Week 4–9: Custom ASR + LLM fine-tuning','Week 10–15: HIPAA compliance & EHR integration','Week 16–20: Pilot deployment & clinician training'],
+  },
+  {
+    id:3, industry:'Retail & CPG', tag:'Demand Forecasting', color:'#F59E0B',
+    client:'RetailMax Global', logo:'RM', headline:'22% Inventory Reduction While Cutting Stockouts in Half',
+    challenge:'RetailMax operated 1,400 SKUs across 6 regions with siloed demand signals. Their spreadsheet-based forecasting left them with $45M in excess inventory and frequent stockouts on best-sellers.',
+    solution:'SRES built a neural forecasting platform that ingests weather, social trends, competitor pricing, and regional events to predict demand with 94% accuracy at the SKU-region level — updated daily.',
+    results:[{val:'22%',label:'Inventory cost reduction'},{val:'94%',label:'Forecast accuracy'},{val:'51%',label:'Stockout reduction'},{val:'$8.2M',label:'Working capital freed'}],
+    timeline:'16 weeks', stack:['Amazon Chronos','Databricks','dbt','Snowflake','Power BI'],
+    quote:'"We went from gut-feel ordering to data-driven certainty. Our buyers now spend their time on strategy, not firefighting."',
+    quoteName:'Priya Sharma, VP Supply Chain — RetailMax Global',
+    process:['Week 1–3: Data pipeline architecture & historical cleansing','Week 4–8: Neural forecasting model training & backtesting','Week 9–13: Regional rollout & buyer training','Week 14–16: Automated reorder integration'],
+  },
+  {
+    id:4, industry:'Manufacturing', tag:'Predictive Maintenance', color:'#A78BFA',
+    client:'PrecisionMfg Industries', logo:'PM', headline:'40% Downtime Reduction Across 12 Production Facilities',
+    challenge:'Unplanned equipment failures were costing PrecisionMfg $3.2M per incident — with no early warning system. Maintenance teams were reactive, performing expensive emergency repairs instead of planned interventions.',
+    solution:'SRES deployed IoT sensors across 340 critical machines, feeding an ensemble of anomaly detection and failure prediction models that flag issues 7–21 days before failure with facility-specific thresholds.',
+    results:[{val:'40%',label:'Downtime reduction'},{val:'$18M',label:'Annual maintenance savings'},{val:'21 days',label:'Average early warning lead'},{val:'96%',label:'Prediction accuracy'}],
+    timeline:'22 weeks', stack:['Azure IoT Hub','Apache Spark','LSTM + XGBoost','Grafana','SAP PM Integration'],
+    quote:'"We\'ve gone from fighting fires to planning maintenance like clockwork. The model paid for itself in the first prevented outage."',
+    quoteName:'Marcus Williams, VP Operations — PrecisionMfg',
+    process:['Week 1–4: IoT sensor deployment & data architecture','Week 5–10: Failure signature modeling & backtesting','Week 11–16: Facility-by-facility rollout','Week 17–22: SAP integration & maintenance workflow redesign'],
+  },
+  {
+    id:5, industry:'Technology', tag:'Customer Support AI', color:'#F87171',
+    client:'CloudPlatform Inc.', logo:'CP', headline:'Automating 70% of Support Tickets Without Sacrificing CSAT',
+    challenge:'CloudPlatform\'s support team of 240 agents was drowning in tier-1 tickets — password resets, billing queries, and basic how-tos — with 4.2-hour average resolution times and declining customer satisfaction.',
+    solution:'SRES built a multi-LLM support agent trained on CloudPlatform\'s entire knowledge base, past tickets, and product docs. It resolves 70% of tickets autonomously and routes the rest with full context to human agents.',
+    results:[{val:'70%',label:'Ticket automation rate'},{val:'4.8/5',label:'CSAT (up from 3.9)'},{val:'8 min',label:'Avg resolution (down from 4.2hr)'},{val:'$4.1M',label:'Annual support cost saved'}],
+    timeline:'12 weeks', stack:['Claude + GPT-4o','LangChain','Zendesk API','Pinecone','Retool'],
+    quote:'"Our agents went from copy-pasting the same answers 50 times a day to handling genuinely complex, high-value issues. Morale is through the roof."',
+    quoteName:'Ethan Brooks, Head of Customer Experience — CloudPlatform',
+    process:['Week 1–2: Knowledge base audit & ticket taxonomy','Week 3–6: LLM fine-tuning & retrieval pipeline','Week 7–9: Zendesk integration & escalation logic','Week 10–12: Agent training & CSAT monitoring'],
+  },
+  {
+    id:6, industry:'Financial Services', tag:'RegTech', color:'#22D3EE',
+    client:'Capital Advisory Partners', logo:'CA', headline:'90% Manual Effort Eliminated from Regulatory Reporting',
+    challenge:'Capital Advisory\'s compliance team spent 1,800+ hours per quarter manually compiling regulatory reports for FINRA and SEC — error-prone, expensive, and always late.',
+    solution:'SRES built an intelligent document processing and regulatory reporting pipeline that automatically extracts, validates, and formats data from 14 internal systems into compliant report structures.',
+    results:[{val:'90%',label:'Manual effort reduction'},{val:'1,800hrs',label:'Saved per quarter'},{val:'99.8%',label:'Data accuracy rate'},{val:'0',label:'Regulatory penalties post-launch'}],
+    timeline:'18 weeks', stack:['Document AI','LLM extraction','Python + Airflow','PostgreSQL','FTP Regulatory APIs'],
+    quote:'"We used to dread reporting season. Now it runs itself. SRES turned our biggest compliance headache into a non-event."',
+    quoteName:'James Rivera, Chief Compliance Officer — Capital Advisory',
+    process:['Week 1–3: Regulatory requirement mapping & data source audit','Week 4–8: Document AI extraction pipeline','Week 9–14: Validation rules & reconciliation engine','Week 15–18: Regulatory API integration & UAT'],
+  },
+];
+
+const FILTERS = ['All','Financial Services','Healthcare','Retail & CPG','Manufacturing','Technology'];
+
+function SharedNav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', fn);
+    return () => window.removeEventListener('scroll', fn);
+  }, []);
+  useEffect(() => { document.documentElement.setAttribute('data-theme', theme); }, [theme]);
+  return (
+    <>
+      <nav className={scrolled ? 'scrolled' : ''}>
+        <a href="index.html" className="nav-logo">
+          <div className="nav-logo-mark">SRES</div>
+          <span>Solutions</span>
+        </a>
+        <ul className="nav-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#usecases">Use Cases</a></li>
+          <li><a href="case-studies.html" style={{color:'var(--primary-light)'}}>Case Studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div style={{display:'flex',gap:10,alignItems:'center'}} className="nav-right-desktop">
+          <button className="theme-toggle" onClick={() => setTheme(t => t==='dark'?'light':'dark')}>
+            {theme==='dark'?'☀ Light':'🌙 Dark'}
+          </button>
+          <a href="contact.html" className="btn-primary" style={{padding:'9px 20px',fontSize:13}}>Get Started →</a>
+        </div>
+        <button className="hamburger" onClick={() => setMenuOpen(o=>!o)}>
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div className={`mobile-menu ${menuOpen?'open':''}`}>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </>
+  );
+}
+
+function CaseStudyModal({ cs, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
+  return (
+    <div className="cs-modal" onClick={e => e.target === e.currentTarget && onClose()}>
+      <div className="cs-modal-box">
+        <div style={{padding:'28px 32px',borderBottom:'1px solid var(--border)',display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:16}}>
+          <div>
+            <div style={{display:'flex',gap:8,marginBottom:10,flexWrap:'wrap'}}>
+              <span style={{padding:'4px 12px',borderRadius:20,background:`${cs.color}18`,border:`1px solid ${cs.color}30`,color:cs.color,fontSize:11,fontWeight:600}}>{cs.industry}</span>
+              <span style={{padding:'4px 12px',borderRadius:20,background:'var(--glass-bg)',border:'1px solid var(--glass-border)',color:'var(--primary-light)',fontSize:11,fontWeight:600}}>{cs.tag}</span>
+            </div>
+            <h2 style={{fontSize:'clamp(18px,2.5vw,24px)',fontWeight:800,lineHeight:1.2}}>{cs.headline}</h2>
+            <div style={{color:'var(--muted)',fontSize:13,marginTop:6}}>{cs.client} · {cs.timeline} engagement</div>
+          </div>
+          <button onClick={onClose} style={{background:'var(--surface2)',border:'1px solid var(--border)',borderRadius:8,width:36,height:36,display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer',color:'var(--muted)',fontSize:18,flexShrink:0}}>×</button>
+        </div>
+        <div style={{padding:'28px 32px'}}>
+          {/* Results */}
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(120px,1fr))',gap:12,marginBottom:28}}>
+            {cs.results.map((r,i) => (
+              <div key={i} style={{background:'var(--surface2)',border:'1px solid var(--border)',borderRadius:12,padding:'16px',textAlign:'center'}}>
+                <div style={{fontFamily:'Syne,sans-serif',fontSize:22,fontWeight:800,color:'var(--primary-light)',lineHeight:1}}>{r.val}</div>
+                <div style={{fontSize:11,color:'var(--muted)',marginTop:4,lineHeight:1.3}}>{r.label}</div>
+              </div>
+            ))}
+          </div>
+          {/* Challenge */}
+          <h4 style={{fontSize:14,fontWeight:700,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:8}}>The Challenge</h4>
+          <p style={{color:'var(--text2)',fontSize:14,lineHeight:1.7,marginBottom:20}}>{cs.challenge}</p>
+          {/* Solution */}
+          <h4 style={{fontSize:14,fontWeight:700,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:8}}>Our Solution</h4>
+          <p style={{color:'var(--text2)',fontSize:14,lineHeight:1.7,marginBottom:20}}>{cs.solution}</p>
+          {/* Quote */}
+          <div className="quote-block">
+            <p style={{color:'var(--text)',fontSize:15,fontStyle:'italic',lineHeight:1.7,marginBottom:8}}>{cs.quote}</p>
+            <div style={{fontSize:12,color:'var(--muted)',fontWeight:600}}>{cs.quoteName}</div>
+          </div>
+          {/* Process */}
+          <h4 style={{fontSize:14,fontWeight:700,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:12}}>Delivery Timeline</h4>
+          <div style={{display:'flex',flexDirection:'column',gap:8,marginBottom:20}}>
+            {cs.process.map((step,i) => (
+              <div key={i} style={{display:'flex',alignItems:'flex-start',gap:12}}>
+                <div style={{width:20,height:20,borderRadius:6,background:'var(--glass-bg)',border:'1px solid var(--glass-border)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontWeight:700,color:'var(--primary-light)',flexShrink:0,marginTop:1}}>{i+1}</div>
+                <span style={{fontSize:13,color:'var(--text2)',lineHeight:1.5}}>{step}</span>
+              </div>
+            ))}
+          </div>
+          {/* Stack */}
+          <h4 style={{fontSize:14,fontWeight:700,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:10}}>Tech Stack</h4>
+          <div style={{display:'flex',gap:6,flexWrap:'wrap',marginBottom:24}}>
+            {cs.stack.map(s => <span key={s} style={{padding:'4px 10px',borderRadius:6,background:'var(--glass-bg)',border:'1px solid var(--border)',fontSize:11,color:'var(--muted2)',fontWeight:500}}>{s}</span>)}
+          </div>
+          <a href="contact.html" className="btn-primary" style={{width:'100%',justifyContent:'center'}}>Start a Similar Project →</a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [filter, setFilter] = useState('All');
+  const [selected, setSelected] = useState(null);
+  const filtered = filter === 'All' ? CASES : CASES.filter(c => c.industry === filter);
+
+  return (
+    <>
+      <SharedNav />
+      {/* Hero */}
+      <section className="cs-hero">
+        <div style={{position:'absolute',top:'10%',left:'10%',width:500,height:500,borderRadius:'50%',background:'radial-gradient(circle,rgba(131,27,132,0.1),transparent 65%)',pointerEvents:'none'}} />
+        <div className="container" style={{position:'relative',zIndex:1}}>
+          <div className="badge" style={{marginBottom:24}}>Real-World Results</div>
+          <h1 style={{fontSize:'clamp(36px,6vw,72px)',fontWeight:800,letterSpacing:'-0.02em',marginBottom:20}}>
+            Case Studies
+          </h1>
+          <p style={{fontSize:'clamp(16px,2vw,20px)',color:'var(--text2)',maxWidth:520,lineHeight:1.75,fontWeight:300,marginBottom:40}}>
+            Six industries. Hundreds of weeks of work. Millions in measurable value. Here's the proof.
+          </p>
+          <div style={{display:'flex',gap:24,flexWrap:'wrap'}}>
+            {[{val:'$40M+',label:'Client value delivered'},{val:'6',label:'Industries served'},{val:'92%',label:'Projects on-time'},{val:'47',label:'Enterprise clients'}].map((s,i) => (
+              <div key={i}>
+                <div style={{fontFamily:'Syne,sans-serif',fontSize:28,fontWeight:800,color:'var(--primary-light)',lineHeight:1}}>{s.val}</div>
+                <div style={{fontSize:12,color:'var(--muted)',marginTop:4}}>{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cases */}
+      <section style={{paddingTop:0}}>
+        <div className="container">
+          <div className="cs-filter-bar">
+            {FILTERS.map(f => <button key={f} className={`filter-btn ${filter===f?'active':''}`} onClick={() => setFilter(f)}>{f}</button>)}
+          </div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:20}}>
+            {filtered.map(cs => (
+              <div key={cs.id} className="cs-card" onClick={() => setSelected(cs)}>
+                <div className="cs-card-header">
+                  <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:16}}>
+                    <div style={{width:44,height:44,borderRadius:12,background:`${cs.color}18`,border:`1px solid ${cs.color}25`,display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:13,color:cs.color}}>{cs.logo}</div>
+                    <span style={{padding:'4px 10px',borderRadius:20,background:`${cs.color}15`,border:`1px solid ${cs.color}25`,color:cs.color,fontSize:11,fontWeight:600}}>{cs.tag}</span>
+                  </div>
+                  <div style={{fontSize:11,color:'var(--muted)',marginBottom:6,fontWeight:500}}>{cs.industry} · {cs.client}</div>
+                  <h3 style={{fontSize:17,fontWeight:700,lineHeight:1.3,marginBottom:16}}>{cs.headline}</h3>
+                </div>
+                <div className="cs-card-body">
+                  <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:12,marginBottom:18}}>
+                    {cs.results.slice(0,2).map((r,i) => (
+                      <div key={i} className="cs-stat">
+                        <span className="cs-stat-val">{r.val}</span>
+                        <span className="cs-stat-label">{r.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{borderTop:'1px solid var(--border)',paddingTop:16,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                    <span style={{fontSize:12,color:'var(--muted)'}}>⏱ {cs.timeline}</span>
+                    <span style={{fontSize:13,color:'var(--primary-light)',fontWeight:600}}>Read case study →</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section>
+        <div className="container">
+          <div style={{background:'var(--glass-bg)',border:'1px solid var(--glass-border)',borderRadius:20,padding:'clamp(32px,5vw,56px)',textAlign:'center'}}>
+            <h2 style={{fontSize:'clamp(24px,3vw,40px)',marginBottom:14}}>Want results like these?</h2>
+            <p style={{color:'var(--muted2)',fontSize:16,maxWidth:420,margin:'0 auto 28px',lineHeight:1.7}}>Book a 45-minute strategy call and let's scope what's possible for your organization.</p>
+            <a href="contact.html" className="btn-primary" style={{fontSize:15,padding:'14px 32px'}}>Book a Strategy Call →</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer>
+        <div className="container">
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:16}}>
+            <a href="index.html" className="nav-logo"><div className="nav-logo-mark">SRES</div><span>Solutions</span></a>
+            <div style={{fontSize:12,color:'var(--muted)'}}>© 2025 SRES Solutions. All rights reserved.</div>
+            <a href="https://wa.me/919985020218" target="_blank" style={{color:'var(--green)',fontSize:13,textDecoration:'none'}}>📱 WhatsApp Us</a>
+          </div>
+        </div>
+      </footer>
+
+      {/* WhatsApp */}
+      <a href="https://wa.me/919985020218" target="_blank" rel="noopener noreferrer" className="whatsapp-fab" title="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.51 3.58 1.39 5.06L2 22l5.09-1.36C8.53 21.47 10.21 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="rgba(37,211,102,0.9)"/><path d="M17 14.38c-.22.56-1.14 1.06-1.78 1.2-.44.09-1 .16-2.84-.6-2.34-.96-3.88-3.36-4-3.52-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.86-2.02.22-.24.5-.34.66-.34.16 0 .32 0 .46.01.16.01.37-.06.58.45.22.52.74 1.7.81 1.84.07.14.11.3.01.48-.1.18-.15.28-.29.44-.14.16-.29.36-.41.48-.14.14-.29.29-.12.59.17.3.75 1.23 1.62 2.02 1.12 1.01 2.05 1.32 2.35 1.46.3.14.48.11.66-.09.18-.2.74-.86.94-1.16.2-.3.41-.24.68-.13.27.09 1.45.69 1.74.84.29.15.48.22.55.34.07.13-.28.65-1.5.21z" fill="white"/></svg>
+      </a>
+
+      {selected && <CaseStudyModal cs={selected} onClose={() => setSelected(null)} />}
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

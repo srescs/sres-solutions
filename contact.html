@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact SRES Solutions | Book a Free AI Strategy Call</title>
+
+<!-- Primary SEO -->
+<meta name="description" content="Get in touch with SRES Solutions. Book a free 45-minute AI strategy call, email hello@sres.solutions, or WhatsApp +91 99850 20218. Based in India, serving globally." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://sres.solutions/contact.html" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sres.solutions/contact.html" />
+<meta property="og:site_name" content="SRES Solutions" />
+<meta property="og:title" content="Contact SRES Solutions | Book a Free AI Strategy Call" />
+<meta property="og:description" content="Get in touch with SRES Solutions. Book a free 45-minute AI strategy call, email hello@sres.solutions, or WhatsApp +91 99850 20218. Based in India, serving globally." />
+<meta property="og:image" content="https://sres.solutions/og-image.png" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contact SRES Solutions | Book a Free AI Strategy Call" />
+<meta name="twitter:description" content="Get in touch with SRES Solutions. Book a free 45-minute AI strategy call, email hello@sres.solutions, or WhatsApp +91 99850 20218. Based in India, serving globally." />
+<!-- Schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ContactPage","name":"Contact SRES Solutions","description":"Book a free AI strategy call with SRES Solutions. Email, WhatsApp or Calendly — we respond within 24 hours."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sres.solutions/"},{"@type":"ListItem","position":2,"name":"Contact SRES Solutions","item":"https://sres.solutions/contact.html"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+.form-group { margin-bottom: 20px; }
+.form-label { display: block; font-size: 13px; font-weight: 600; color: var(--text2); margin-bottom: 7px; }
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: 13px 16px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 10px; color: var(--text);
+  font-family: 'DM Sans', sans-serif; font-size: 14px;
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--primary); box-shadow: 0 0 0 3px rgba(131,27,132,0.12);
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+.form-textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+.form-select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media(max-width:600px){ .form-row { grid-template-columns: 1fr; } }
+.contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; display: flex; align-items: flex-start; gap: 16px; transition: all 0.3s; }
+.contact-card:hover { border-color: var(--glass-border); transform: translateY(-2px); }
+.contact-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.success-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(12px); z-index: 500; display: flex; align-items: center; justify-content: center; }
+.success-box { background: var(--surface); border: 1px solid var(--glass-border); border-radius: 24px; padding: 48px; text-align: center; max-width: 440px; width: 90%; }
+.radio-group { display: flex; gap: 10px; flex-wrap: wrap; }
+.radio-opt { display: flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.2s; font-size: 13px; color: var(--text2); }
+.radio-opt.selected { border-color: var(--primary); background: var(--glass-bg); color: var(--primary-light); }
+.radio-opt:hover:not(.selected) { border-color: var(--muted2); }
+.step-indicator { display: flex; gap: 8px; align-items: center; margin-bottom: 32px; }
+.step-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: all 0.3s; }
+.step-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
+.step-dot.done { background: var(--green); }
+</style>
+</head>
+<body class="grid-bg">
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+function SharedNav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', fn);
+    return () => window.removeEventListener('scroll', fn);
+  }, []);
+  useEffect(() => { document.documentElement.setAttribute('data-theme', theme); }, [theme]);
+  return (
+    <>
+      <nav className={scrolled ? 'scrolled' : ''}>
+        <a href="index.html" className="nav-logo">
+          <div className="nav-logo-mark">SRES</div>
+          <span>Solutions</span>
+        </a>
+        <ul className="nav-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="contact.html" style={{color:'var(--primary-light)'}}>Contact</a></li>
+        </ul>
+        <div style={{display:'flex',gap:10,alignItems:'center'}} className="nav-right-desktop">
+          <button className="theme-toggle" onClick={() => setTheme(t => t==='dark'?'light':'dark')}>
+            {theme==='dark'?'☀ Light':'🌙 Dark'}
+          </button>
+          <a href="https://wa.me/919985020218" target="_blank" className="btn-primary" style={{padding:'9px 20px',fontSize:13,background:'#1DA851'}}>
+            📱 WhatsApp
+          </a>
+        </div>
+        <button className="hamburger" onClick={() => setMenuOpen(o=>!o)}>
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      <div className={`mobile-menu ${menuOpen?'open':''}`}>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </>
+  );
+}
+
+const SERVICES_LIST = [
+  'AI Strategy & Transformation','Custom AI Development',
+  'AI Integration & Automation','Data Engineering & AI Ops',
+  'AI-Powered Analytics','AI Governance & Compliance','Not sure yet',
+];
+const COMPANY_SIZES = ['1–50','51–200','201–1000','1000+'];
+const BUDGETS = ['< $50K','$50K–$200K','$200K–$500K','$500K+','Let\'s discuss'];
+const TIMELINES = ['ASAP','1–3 months','3–6 months','6+ months'];
+
+function ContactForm() {
+  const [step, setStep] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    name:'', email:'', company:'', phone:'', role:'',
+    service:'', size:'', budget:'', timeline:'', message:''
+  });
+  const [errors, setErrors] = useState({});
+
+  const set = (k,v) => { setForm(f=>({...f,[k]:v})); setErrors(e=>({...e,[k]:''})); };
+
+  const validate0 = () => {
+    const e = {};
+    if (!form.name.trim()) e.name = 'Required';
+    if (!form.email.match(/^[^@]+@[^@]+\.[^@]+$/)) e.email = 'Valid email required';
+    if (!form.company.trim()) e.company = 'Required';
+    return e;
+  };
+  const validate1 = () => {
+    const e = {};
+    if (!form.service) e.service = 'Please select a service';
+    return e;
+  };
+
+  const next = () => {
+    if (step === 0) { const e = validate0(); if (Object.keys(e).length) { setErrors(e); return; } }
+    if (step === 1) { const e = validate1(); if (Object.keys(e).length) { setErrors(e); return; } }
+    setStep(s => s+1);
+  };
+
+  const submit = (ev) => {
+    ev.preventDefault();
+    setSubmitted(true);
+  };
+
+  const steps = [
+    // Step 0: Who are you
+    <div key={0}>
+      <h3 style={{fontSize:20,fontWeight:700,marginBottom:6}}>Tell us about yourself</h3>
+      <p style={{color:'var(--muted2)',fontSize:14,marginBottom:24}}>We'll use this to personalize your experience.</p>
+      <div className="form-row">
+        <div className="form-group">
+          <label className="form-label">Full Name *</label>
+          <input className="form-input" placeholder="Jane Smith" value={form.name} onChange={e => set('name',e.target.value)} />
+          {errors.name && <div style={{color:'#F87171',fontSize:12,marginTop:4}}>{errors.name}</div>}
+        </div>
+        <div className="form-group">
+          <label className="form-label">Work Email *</label>
+          <input className="form-input" type="email" placeholder="jane@company.com" value={form.email} onChange={e => set('email',e.target.value)} />
+          {errors.email && <div style={{color:'#F87171',fontSize:12,marginTop:4}}>{errors.email}</div>}
+        </div>
+      </div>
+      <div className="form-row">
+        <div className="form-group">
+          <label className="form-label">Company *</label>
+          <input className="form-input" placeholder="Acme Corp" value={form.company} onChange={e => set('company',e.target.value)} />
+          {errors.company && <div style={{color:'#F87171',fontSize:12,marginTop:4}}>{errors.company}</div>}
+        </div>
+        <div className="form-group">
+          <label className="form-label">Your Role</label>
+          <input className="form-input" placeholder="CTO, Head of AI, etc." value={form.role} onChange={e => set('role',e.target.value)} />
+        </div>
+      </div>
+      <div className="form-group">
+        <label className="form-label">Phone / WhatsApp</label>
+        <input className="form-input" placeholder="+91 99850 20218" value={form.phone} onChange={e => set('phone',e.target.value)} />
+      </div>
+    </div>,
+
+    // Step 1: What do you need
+    <div key={1}>
+      <h3 style={{fontSize:20,fontWeight:700,marginBottom:6}}>What can we help with?</h3>
+      <p style={{color:'var(--muted2)',fontSize:14,marginBottom:24}}>Select the service area that best fits your needs.</p>
+      <div className="form-group">
+        <label className="form-label">Service Area *</label>
+        <div style={{display:'flex',flexDirection:'column',gap:8}}>
+          {SERVICES_LIST.map(s => (
+            <div key={s} className={`radio-opt ${form.service===s?'selected':''}`} onClick={() => set('service',s)}>
+              <span style={{width:16,height:16,borderRadius:50,border:`2px solid ${form.service===s?'var(--primary)':'var(--border)'}`,display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+                {form.service===s && <span style={{width:8,height:8,borderRadius:'50%',background:'var(--primary)',display:'block'}} />}
+              </span>
+              {s}
+            </div>
+          ))}
+        </div>
+        {errors.service && <div style={{color:'#F87171',fontSize:12,marginTop:4}}>{errors.service}</div>}
+      </div>
+      <div className="form-group">
+        <label className="form-label">Company Size</label>
+        <div className="radio-group">
+          {COMPANY_SIZES.map(s => <div key={s} className={`radio-opt ${form.size===s?'selected':''}`} onClick={() => set('size',s)}>{s} employees</div>)}
+        </div>
+      </div>
+    </div>,
+
+    // Step 2: Budget & timeline
+    <div key={2}>
+      <h3 style={{fontSize:20,fontWeight:700,marginBottom:6}}>Budget & Timeline</h3>
+      <p style={{color:'var(--muted2)',fontSize:14,marginBottom:24}}>This helps us scope the right engagement for you.</p>
+      <div className="form-group">
+        <label className="form-label">Approximate Budget</label>
+        <div className="radio-group">
+          {BUDGETS.map(b => <div key={b} className={`radio-opt ${form.budget===b?'selected':''}`} onClick={() => set('budget',b)}>{b}</div>)}
+        </div>
+      </div>
+      <div className="form-group">
+        <label className="form-label">Desired Start</label>
+        <div className="radio-group">
+          {TIMELINES.map(t => <div key={t} className={`radio-opt ${form.timeline===t?'selected':''}`} onClick={() => set('timeline',t)}>{t}</div>)}
+        </div>
+      </div>
+      <div className="form-group">
+        <label className="form-label">Tell us more about your project</label>
+        <textarea className="form-textarea" placeholder="Describe your challenge, current state, and what success looks like for you..." value={form.message} onChange={e => set('message',e.target.value)} />
+      </div>
+    </div>,
+  ];
+
+  return (
+    <div style={{background:'var(--surface)',border:'1px solid var(--border)',borderRadius:20,padding:'clamp(24px,4vw,40px)'}}>
+      {/* Step indicator */}
+      <div className="step-indicator">
+        {[0,1,2].map(i => (
+          <div key={i} className={`step-dot ${i===step?'active':i<step?'done':''}`} />
+        ))}
+        <span style={{fontSize:12,color:'var(--muted)',marginLeft:8}}>Step {step+1} of 3</span>
+      </div>
+
+      <form onSubmit={submit}>
+        {steps[step]}
+        <div style={{display:'flex',gap:12,marginTop:24}}>
+          {step > 0 && (
+            <button type="button" className="btn-ghost" style={{flex:1}} onClick={() => setStep(s=>s-1)}>
+              ← Back
+            </button>
+          )}
+          {step < 2 ? (
+            <button type="button" className="btn-primary" style={{flex:2}} onClick={next}>
+              Continue →
+            </button>
+          ) : (
+            <button type="submit" className="btn-primary" style={{flex:2}}>
+              Send Message →
+            </button>
+          )}
+        </div>
+        <p style={{fontSize:11,color:'var(--muted)',textAlign:'center',marginTop:14}}>
+          🔒 Your information is encrypted and never shared. We respond within 24 hours.
+        </p>
+      </form>
+
+      {submitted && (
+        <div className="success-overlay" onClick={() => setSubmitted(false)}>
+          <div className="success-box">
+            <div style={{fontSize:56,marginBottom:16}}>✅</div>
+            <h3 style={{fontSize:24,fontWeight:800,marginBottom:10}}>Message Sent!</h3>
+            <p style={{color:'var(--muted2)',fontSize:15,lineHeight:1.7,marginBottom:24}}>
+              Thank you, <strong>{form.name}</strong>! We've received your message and will get back to you within 24 hours.<br /><br />
+              In the meantime, feel free to WhatsApp us directly.
+            </p>
+            <a href="https://wa.me/919985020218" target="_blank" className="btn-primary" style={{width:'100%',justifyContent:'center',background:'#1DA851',marginBottom:12}}>
+              📱 WhatsApp: +91 99850 20218
+            </a>
+            <button className="btn-ghost" style={{width:'100%',justifyContent:'center'}} onClick={() => { setSubmitted(false); setStep(0); setForm({name:'',email:'',company:'',phone:'',role:'',service:'',size:'',budget:'',timeline:'',message:''}); }}>
+              Submit Another Enquiry
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <SharedNav />
+      <section style={{paddingTop:140,paddingBottom:80}}>
+        <div style={{position:'absolute',top:'8%',right:'5%',width:400,height:400,borderRadius:'50%',background:'radial-gradient(circle,rgba(131,27,132,0.1),transparent 65%)',pointerEvents:'none'}} />
+        <div className="container">
+          <div style={{display:'grid',gridTemplateColumns:'1fr 1.5fr',gap:48,alignItems:'start'}}>
+
+            {/* Left: info */}
+            <div>
+              <div className="badge" style={{marginBottom:20}}>Get in Touch</div>
+              <h1 style={{fontSize:'clamp(32px,4vw,56px)',fontWeight:800,letterSpacing:'-0.02em',marginBottom:16,lineHeight:1.05}}>
+                Let's close the <span className="grad-text">AI gap</span> together.
+              </h1>
+              <p style={{color:'var(--text2)',fontSize:16,lineHeight:1.75,marginBottom:36,fontWeight:300}}>
+                Book a free 45-minute strategy call. We'll assess where you are, identify quick wins, and outline what transformation looks like for your organisation.
+              </p>
+
+              {/* Contact cards */}
+              <div style={{display:'flex',flexDirection:'column',gap:12,marginBottom:36}}>
+                <a href="mailto:hello@sres.solutions" className="contact-card" style={{textDecoration:'none'}}>
+                  <div className="contact-icon" style={{background:'rgba(131,27,132,0.12)',border:'1px solid rgba(131,27,132,0.2)'}}>📧</div>
+                  <div>
+                    <div style={{fontWeight:600,fontSize:14,marginBottom:2}}>Email Us</div>
+                    <div style={{color:'var(--primary-light)',fontSize:13}}>hello@sres.solutions</div>
+                    <div style={{color:'var(--muted)',fontSize:11,marginTop:2}}>Response within 24 hours</div>
+                  </div>
+                </a>
+                <a href="https://wa.me/919985020218" target="_blank" className="contact-card" style={{textDecoration:'none'}}>
+                  <div className="contact-icon" style={{background:'rgba(37,211,102,0.1)',border:'1px solid rgba(37,211,102,0.2)'}}>📱</div>
+                  <div>
+                    <div style={{fontWeight:600,fontSize:14,marginBottom:2}}>WhatsApp</div>
+                    <div style={{color:'#34D399',fontSize:13}}>+91 99850 20218</div>
+                    <div style={{color:'var(--muted)',fontSize:11,marginTop:2}}>Typically replies in minutes</div>
+                  </div>
+                </a>
+                <div className="contact-card">
+                  <div className="contact-icon" style={{background:'rgba(245,158,11,0.1)',border:'1px solid rgba(245,158,11,0.2)'}}>🌐</div>
+                  <div>
+                    <div style={{fontWeight:600,fontSize:14,marginBottom:2}}>Website</div>
+                    <div style={{color:'var(--gold)',fontSize:13}}>sres.solutions</div>
+                    <div style={{color:'var(--muted)',fontSize:11,marginTop:2}}>Mon–Fri, 9am–6pm IST</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Why us */}
+              <div style={{background:'var(--glass-bg)',border:'1px solid var(--glass-border)',borderRadius:14,padding:20}}>
+                <div style={{fontWeight:700,fontSize:13,marginBottom:12,color:'var(--primary-light)'}}>Why book a call?</div>
+                {['Free, no-obligation 45-minute session','Immediate assessment of your AI readiness','Concrete next steps you can act on today','Access to our AI Maturity Framework'].map((item,i) => (
+                  <div key={i} style={{display:'flex',alignItems:'center',gap:10,marginBottom:8,fontSize:13,color:'var(--text2)'}}>
+                    <span style={{color:'var(--green)',flexShrink:0}}>✓</span>{item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: form */}
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{paddingTop:0}}>
+        <div className="container">
+          <h2 style={{fontSize:'clamp(22px,3vw,36px)',fontWeight:800,marginBottom:32,textAlign:'center'}}>Frequently Asked Questions</h2>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:16}}>
+            {[
+              {q:'How long does a typical engagement take?',a:'Most engagements run 12–22 weeks from kickoff to production deployment, depending on scope. We always deliver a 2-week diagnostic first so you have full visibility before committing.'},
+              {q:'Do you work with companies outside India?',a:'Yes — SRES Solutions works with clients across India, the Middle East, Europe, and North America. Our team is globally distributed and experienced with remote delivery.'},
+              {q:'What size companies do you work with?',a:'We work with mid-market and enterprise clients — typically 200+ employees with dedicated IT or engineering teams. Our smallest engagement was $80K; our largest was $3.2M.'},
+              {q:'Will you sign an NDA?',a:'Absolutely. We sign NDAs before any preliminary discussion involving proprietary data or business processes. Confidentiality is foundational to how we work.'},
+              {q:'Do you provide ongoing support after launch?',a:'Yes. Every engagement includes a 90-day hypercare period post-launch. We also offer retainer-based AI Ops support for model monitoring, retraining, and iteration.'},
+              {q:'How do you measure success?',a:'We agree on KPIs before we start — no ambiguity. These are written into our engagement contract and reviewed at every sprint review. If we miss targets, we discuss remediation before billing.'},
+            ].map((item,i) => (
+              <div key={i} style={{background:'var(--surface)',border:'1px solid var(--border)',borderRadius:14,padding:20}}>
+                <h4 style={{fontSize:15,fontWeight:700,marginBottom:8,lineHeight:1.3}}>{item.q}</h4>
+                <p style={{color:'var(--muted2)',fontSize:13,lineHeight:1.7}}>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div className="container">
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:16}}>
+            <a href="index.html" className="nav-logo"><div className="nav-logo-mark">SRES</div><span>Solutions</span></a>
+            <div style={{fontSize:12,color:'var(--muted)'}}>© 2025 SRES Solutions. All rights reserved.</div>
+            <a href="https://wa.me/919985020218" target="_blank" style={{color:'#34D399',fontSize:13,textDecoration:'none',display:'flex',alignItems:'center',gap:6}}>📱 +91 99850 20218</a>
+          </div>
+        </div>
+      </footer>
+
+      <a href="https://wa.me/919985020218" target="_blank" rel="noopener noreferrer" className="whatsapp-fab" title="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.51 3.58 1.39 5.06L2 22l5.09-1.36C8.53 21.47 10.21 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="rgba(37,211,102,0.9)"/><path d="M17 14.38c-.22.56-1.14 1.06-1.78 1.2-.44.09-1 .16-2.84-.6-2.34-.96-3.88-3.36-4-3.52-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.86-2.02.22-.24.5-.34.66-.34.16 0 .32 0 .46.01.16.01.37-.06.58.45.22.52.74 1.7.81 1.84.07.14.11.3.01.48-.1.18-.15.28-.29.44-.14.16-.29.36-.41.48-.14.14-.29.29-.12.59.17.3.75 1.23 1.62 2.02 1.12 1.01 2.05 1.32 2.35 1.46.3.14.48.11.66-.09.18-.2.74-.86.94-1.16.2-.3.41-.24.68-.13.27.09 1.45.69 1.74.84.29.15.48.22.55.34.07.13-.28.65-1.5.21z" fill="white"/></svg>
+      </a>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

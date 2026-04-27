@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog & Resources | SRES Solutions — AI Insights for Enterprise Leaders</title>
+<meta name="description" content="Practical AI insights, transformation playbooks, and research for enterprise leaders. Written by the team at SRES Solutions." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://sres.solutions/blog.html" />
+<meta property="og:title" content="Blog & Resources | SRES Solutions" />
+<meta property="og:description" content="Practical AI insights and transformation playbooks for enterprise leaders." />
+<meta property="og:image" content="https://sres.solutions/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="shared.css" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+.blog-hero { min-height:44vh; display:flex; align-items:center; padding-top:130px; position:relative; overflow:hidden; }
+.blog-card { background:var(--surface); border:1px solid var(--border); border-radius:20px; overflow:hidden; transition:all 0.3s; cursor:pointer; display:flex; flex-direction:column; }
+.blog-card:hover { border-color:var(--glass-border); transform:translateY(-4px); box-shadow:var(--shadow); }
+.blog-card-img { height:180px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.blog-card-body { padding:24px; flex:1; display:flex; flex-direction:column; }
+.blog-tag { display:inline-flex; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:600; margin-bottom:12px; }
+.blog-read-time { font-size:11px; color:var(--muted); display:flex; align-items:center; gap:4px; }
+.featured-card { background:var(--surface); border:1px solid var(--border); border-radius:20px; overflow:hidden; display:grid; grid-template-columns:1fr 1fr; transition:all 0.3s; }
+@media(max-width:700px){ .featured-card { grid-template-columns:1fr; } }
+.featured-card:hover { border-color:var(--glass-border); box-shadow:var(--shadow); }
+.newsletter-box { background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:20px; padding:clamp(28px,5vw,48px); text-align:center; }
+.input-row { display:flex; gap:10px; max-width:440px; margin:0 auto; }
+.email-input { flex:1; padding:12px 16px; background:var(--surface2); border:1px solid var(--border); border-radius:10px; color:var(--text); font-family:'DM Sans',sans-serif; font-size:14px; outline:none; transition:border-color 0.2s; }
+.email-input:focus { border-color:var(--primary); }
+.email-input::placeholder { color:var(--muted); }
+.filter-pill { padding:7px 16px; border-radius:100px; border:1px solid var(--border); background:transparent; color:var(--muted2); font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+.filter-pill.active { background:var(--primary); color:white; border-color:var(--primary); }
+.filter-pill:hover:not(.active) { border-color:var(--primary); color:var(--primary-light); }
+</style>
+</head>
+<body class="grid-bg">
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+function useReveal(t=0.1){const r=useRef(null);const[v,sv]=useState(false);useEffect(()=>{const e=r.current;if(!e)return;const o=new IntersectionObserver(([x])=>{if(x.isIntersecting){sv(true);o.disconnect();}},{threshold:t});o.observe(e);return()=>o.disconnect();},[]);return[r,v];}
+
+const POSTS = [
+  {
+    id:1, featured:true,
+    tag:'AI Strategy', tagColor:'#831b84',
+    title:'Why 85% of Enterprise AI Projects Fail — And the 3 Things That Fix It',
+    excerpt:'Gartner\'s failure rate for AI projects isn\'t a technology problem. We\'ve walked into the aftermath of dozens of failed AI initiatives. Here is what we keep finding, and what actually works.',
+    author:'SRES Research Team', date:'Apr 18, 2026', readTime:'8 min read',
+    gradient:'linear-gradient(135deg,rgba(131,27,132,0.2),rgba(200,85,202,0.1))',
+    topics:['Gartner Research','Change Management','AI KPIs','Failure Patterns'],
+  },
+  {
+    id:2, featured:false,
+    tag:'LLMs', tagColor:'#22D3EE',
+    title:'Building LLM Applications That Actually Reach Production',
+    excerpt:'Most LLM prototypes look great in demos and fail in production. Here\'s our engineering checklist for making them ship.',
+    author:'SRES Engineering', date:'Apr 10, 2026', readTime:'11 min read',
+    gradient:'linear-gradient(135deg,rgba(34,211,238,0.15),rgba(34,211,238,0.05))',
+    topics:['LLM Engineering','RAG','MLOps','Production AI'],
+  },
+  {
+    id:3, featured:false,
+    tag:'EU AI Act', tagColor:'#F87171',
+    title:'The EU AI Act Is Live. Here\'s What Your Team Needs to Do in the Next 90 Days.',
+    excerpt:'A practical, non-legal guide to EU AI Act compliance for engineering and product teams — without the jargon.',
+    author:'SRES Governance Team', date:'Apr 3, 2026', readTime:'7 min read',
+    gradient:'linear-gradient(135deg,rgba(248,113,113,0.15),rgba(248,113,113,0.05))',
+    topics:['EU AI Act','Compliance','Risk Management','AI Governance'],
+  },
+  {
+    id:4, featured:false,
+    tag:'Data Engineering', tagColor:'#F59E0B',
+    title:'Your AI Is Only as Good as Your Data Pipeline. Here\'s How to Audit Yours.',
+    excerpt:'A 10-point data readiness checklist before you build anything with AI — because bad data is where models go to die.',
+    author:'SRES Data Team', date:'Mar 28, 2026', readTime:'9 min read',
+    gradient:'linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05))',
+    topics:['Data Quality','Data Engineering','MLOps','AI Readiness'],
+  },
+  {
+    id:5, featured:false,
+    tag:'Healthcare AI', tagColor:'#10B981',
+    title:'How a 340-Bed Hospital Gave Doctors 2.5 Hours Back Every Day',
+    excerpt:'The inside story of how we built a clinical documentation AI that actually got adopted — and why the technology was the easy part.',
+    author:'SRES Solutions', date:'Mar 21, 2026', readTime:'6 min read',
+    gradient:'linear-gradient(135deg,rgba(16,185,129,0.15),rgba(16,185,129,0.05))',
+    topics:['Healthcare AI','Clinical NLP','Change Management','Case Study'],
+  },
+  {
+    id:6, featured:false,
+    tag:'AI Adoption', tagColor:'#A78BFA',
+    title:'The Quiet Reason Your AI Initiative Will Fail: Nobody Told the Middle Managers',
+    excerpt:'Senior leadership signs off. Junior staff are excited. And then the middle layer kills it. Here\'s why — and how to fix it.',
+    author:'SRES Research Team', date:'Mar 14, 2026', readTime:'5 min read',
+    gradient:'linear-gradient(135deg,rgba(167,139,250,0.15),rgba(167,139,250,0.05))',
+    topics:['Change Management','AI Adoption','Leadership','Organisational AI'],
+  },
+  {
+    id:7, featured:false,
+    tag:'Education AI', tagColor:'#06B6D4',
+    title:'AI in Education: The $6T Sector That\'s Finally Paying Attention',
+    excerpt:'From student dropout prediction to personalised learning — why education is the most underserved AI opportunity we\'ve seen in 3 years.',
+    author:'SRES Research Team', date:'Mar 7, 2026', readTime:'7 min read',
+    gradient:'linear-gradient(135deg,rgba(6,182,212,0.15),rgba(6,182,212,0.05))',
+    topics:['Education AI','EdTech','Personalised Learning','AI Use Cases'],
+  },
+  {
+    id:8, featured:false,
+    tag:'Playbook', tagColor:'#F59E0B',
+    title:'The 90-Day AI Quick Win Playbook: 8 Automations Any Enterprise Can Ship Fast',
+    excerpt:'Not every AI project needs 6 months and a platform rebuild. Here are 8 workflows most enterprises can automate in under 6 weeks.',
+    author:'SRES Engineering', date:'Feb 28, 2026', readTime:'10 min read',
+    gradient:'linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05))',
+    topics:['Automation','Quick Wins','AI Workflows','Practical AI'],
+  },
+];
+
+const ALL_TAGS = ['All',...[...new Set(POSTS.map(p=>p.tag))]];
+
+function SharedNav() {
+  const [sc,setSc]=useState(false);
+  const [mo,setMo]=useState(false);
+  const [theme,setTheme]=useState('dark');
+  useEffect(()=>{const fn=()=>setSc(window.scrollY>40);window.addEventListener('scroll',fn);return()=>window.removeEventListener('scroll',fn);},[]);
+  useEffect(()=>{document.documentElement.setAttribute('data-theme',theme);},[theme]);
+  return(<>
+    <nav className={sc?'scrolled':''}>
+      <a href="index.html" className="nav-logo">
+        <div className="nav-logo-mark">SRE</div>
+        <span>Solutions</span>
+      </a>
+      <ul className="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="blog.html" style={{color:'var(--primary-light)'}}>Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style={{display:'flex',gap:10,alignItems:'center'}} className="nav-right-desktop">
+        <button className="theme-toggle" onClick={()=>setTheme(t=>t==='dark'?'light':'dark')}>{theme==='dark'?'☀ Light':'🌙 Dark'}</button>
+        <a href="contact.html" className="btn-primary" style={{padding:'9px 20px',fontSize:13}}>Get Started →</a>
+      </div>
+      <button className="hamburger" onClick={()=>setMo(o=>!o)}><span></span><span></span><span></span></button>
+    </nav>
+    <div className={`mobile-menu ${mo?'open':''}`}>
+      <a href="index.html">Home</a><a href="index.html#services">Services</a>
+      <a href="case-studies.html">Case Studies</a><a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </>);
+}
+
+function BlogCard({ post }) {
+  return (
+    <div className="blog-card">
+      <div className="blog-card-img" style={{background:post.gradient}}>
+        <div style={{textAlign:'center',padding:24}}>
+          <div style={{fontFamily:'Syne,sans-serif',fontSize:13,fontWeight:700,color:'var(--primary-light)',opacity:0.7,letterSpacing:'0.08em',textTransform:'uppercase',marginBottom:8}}>{post.tag}</div>
+          <div style={{display:'flex',gap:6,flexWrap:'wrap',justifyContent:'center'}}>
+            {post.topics.slice(0,3).map(t=><span key={t} style={{fontSize:10,padding:'2px 8px',borderRadius:4,background:'rgba(255,255,255,0.08)',color:'var(--muted2)',border:'1px solid var(--border)'}}>{t}</span>)}
+          </div>
+        </div>
+      </div>
+      <div className="blog-card-body">
+        <span className="blog-tag" style={{background:`${post.tagColor}18`,border:`1px solid ${post.tagColor}30`,color:post.tagColor}}>{post.tag}</span>
+        <h3 style={{fontSize:17,fontWeight:700,lineHeight:1.35,marginBottom:10,flex:1}}>{post.title}</h3>
+        <p style={{color:'var(--muted2)',fontSize:13,lineHeight:1.7,marginBottom:16}}>{post.excerpt}</p>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',borderTop:'1px solid var(--border)',paddingTop:14}}>
+          <div style={{fontSize:11,color:'var(--muted)'}}>{post.author}</div>
+          <div className="blog-read-time">⏱ {post.readTime}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FeaturedCard({ post }) {
+  return (
+    <div className="featured-card" style={{marginBottom:40}}>
+      <div style={{background:post.gradient,display:'flex',alignItems:'center',justifyContent:'center',padding:48,minHeight:260}}>
+        <div style={{textAlign:'center'}}>
+          <div style={{fontFamily:'Syne,sans-serif',fontSize:56,fontWeight:800,opacity:0.1,lineHeight:1,color:'var(--primary)',marginBottom:16}}>01</div>
+          <span style={{padding:'6px 16px',borderRadius:20,background:`${post.tagColor}20`,border:`1px solid ${post.tagColor}30`,color:post.tagColor,fontSize:12,fontWeight:600}}>{post.tag}</span>
+        </div>
+      </div>
+      <div style={{padding:'clamp(24px,4vw,40px)',display:'flex',flexDirection:'column',justifyContent:'center'}}>
+        <div style={{fontSize:10,color:'var(--muted)',textTransform:'uppercase',letterSpacing:'0.12em',marginBottom:12}}>Featured Post · {post.date}</div>
+        <h2 style={{fontSize:'clamp(20px,2.5vw,28px)',fontWeight:800,lineHeight:1.2,marginBottom:14}}>{post.title}</h2>
+        <p style={{color:'var(--muted2)',fontSize:14,lineHeight:1.75,marginBottom:24}}>{post.excerpt}</p>
+        <div style={{display:'flex',gap:6,flexWrap:'wrap',marginBottom:24}}>
+          {post.topics.map(t=><span key={t} style={{fontSize:11,padding:'3px 10px',borderRadius:6,background:'var(--glass-bg)',border:'1px solid var(--border)',color:'var(--muted2)'}}>{t}</span>)}
+        </div>
+        <div style={{display:'flex',gap:12,alignItems:'center'}}>
+          <a href="contact.html" className="btn-primary" style={{fontSize:13,padding:'10px 20px'}}>Read Article →</a>
+          <span style={{fontSize:12,color:'var(--muted)'}}>⏱ {post.readTime} · {post.author}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NewsletterBox() {
+  const [email,setEmail]=useState('');
+  const [done,setDone]=useState(false);
+  return (
+    <div className="newsletter-box">
+      <div style={{fontSize:32,marginBottom:12}}>📬</div>
+      <h3 style={{fontSize:'clamp(20px,3vw,28px)',fontWeight:800,marginBottom:8}}>The AI Practitioner</h3>
+      <p style={{color:'var(--muted2)',fontSize:15,maxWidth:380,margin:'0 auto 24px',lineHeight:1.7}}>
+        Bi-weekly insights on enterprise AI adoption — no hype, no fluff. Written by the team that's actually building this stuff.
+      </p>
+      {done ? (
+        <div style={{color:'var(--green)',fontSize:15,fontWeight:600}}>✓ You're on the list. Talk soon.</div>
+      ) : (
+        <div className="input-row" style={{flexWrap:'wrap'}}>
+          <input className="email-input" type="email" placeholder="your@company.com" value={email} onChange={e=>setEmail(e.target.value)} />
+          <button className="btn-primary" style={{padding:'12px 20px',fontSize:14,flexShrink:0}} onClick={()=>email.includes('@')&&setDone(true)}>Subscribe →</button>
+        </div>
+      )}
+      <div style={{fontSize:11,color:'var(--muted)',marginTop:12}}>~3,200 subscribers · Unsubscribe anytime</div>
+    </div>
+  );
+}
+
+function App() {
+  const [filter,setFilter]=useState('All');
+  const featured = POSTS.find(p=>p.featured);
+  const filtered = POSTS.filter(p=>!p.featured&&(filter==='All'||p.tag===filter));
+
+  return (<>
+    <SharedNav />
+    <section className="blog-hero">
+      <div style={{position:'absolute',top:'5%',right:'10%',width:400,height:400,borderRadius:'50%',background:'radial-gradient(circle,rgba(131,27,132,0.1),transparent 65%)',pointerEvents:'none'}}/>
+      <div className="container" style={{position:'relative',zIndex:1}}>
+        <div className="badge" style={{marginBottom:20}}>Insights & Resources</div>
+        <h1 style={{fontSize:'clamp(36px,6vw,68px)',fontWeight:800,letterSpacing:'-0.02em',marginBottom:16,lineHeight:1.05}}>
+          Real thinking on<br/><span style={{background:'linear-gradient(135deg,var(--primary-light),var(--accent))',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>enterprise AI.</span>
+        </h1>
+        <p style={{color:'var(--text2)',fontSize:'clamp(15px,1.8vw,18px)',maxWidth:480,lineHeight:1.75,fontWeight:300}}>
+          No vendor bias. No AI hype. Just what we're learning from building AI in production for real companies.
+        </p>
+      </div>
+    </section>
+
+    <section style={{paddingTop:0}}>
+      <div className="container">
+        {featured && <FeaturedCard post={featured} />}
+
+        {/* Filter bar */}
+        <div style={{display:'flex',gap:8,flexWrap:'wrap',marginBottom:32,overflowX:'auto',paddingBottom:4}}>
+          {ALL_TAGS.map(tag=>(
+            <button key={tag} className={`filter-pill ${filter===tag?'active':''}`} onClick={()=>setFilter(tag)}>{tag}</button>
+          ))}
+        </div>
+
+        {/* Grid */}
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:20,marginBottom:64}}>
+          {filtered.map(post=><BlogCard key={post.id} post={post}/>)}
+        </div>
+
+        <NewsletterBox />
+      </div>
+    </section>
+
+    {/* Resources */}
+    <section>
+      <div className="container">
+        <div style={{marginBottom:36}}>
+          <div className="section-label">Free Resources</div>
+          <h2 style={{fontSize:'clamp(24px,3vw,40px)'}}>Playbooks & Frameworks</h2>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:16}}>
+          {[
+            {icon:'📋',title:'AI Maturity Assessment Framework',desc:'The same 5-dimension assessment we run with every new client. Score your organisation and find your gaps.',tag:'Free Download'},
+            {icon:'🗺',title:'90-Day AI Quick Win Playbook',desc:'8 workflow automations any enterprise can ship in under 6 weeks — with implementation checklists.',tag:'Free Download'},
+            {icon:'⚖',title:'EU AI Act Compliance Checklist',desc:'A 47-point checklist to assess your AI systems against the EU AI Act — no legal degree required.',tag:'Free Download'},
+            {icon:'📊',title:'AI ROI Calculator Template',desc:'The spreadsheet model we use to build the business case for AI initiatives before a single line of code is written.',tag:'Free Download'},
+          ].map((r,i)=>(
+            <div key={i} className="card" style={{cursor:'pointer'}} onClick={()=>window.location.href='contact.html'}>
+              <div style={{fontSize:28,marginBottom:14}}>{r.icon}</div>
+              <div style={{display:'inline-flex',padding:'3px 10px',borderRadius:20,background:'rgba(16,185,129,0.1)',border:'1px solid rgba(16,185,129,0.2)',color:'#34D399',fontSize:11,fontWeight:600,marginBottom:12}}>{r.tag}</div>
+              <h3 style={{fontSize:16,fontWeight:700,marginBottom:8,lineHeight:1.3}}>{r.title}</h3>
+              <p style={{color:'var(--muted2)',fontSize:13,lineHeight:1.7}}>{r.desc}</p>
+              <div style={{marginTop:16,fontSize:13,color:'var(--primary-light)',fontWeight:500}}>Get access →</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div className="container">
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:16}}>
+          <a href="index.html" className="nav-logo"><div className="nav-logo-mark">SRE</div><span>Solutions</span></a>
+          <div style={{fontSize:12,color:'var(--muted)'}}>© 2025 SRES Solutions. All rights reserved.</div>
+          <a href="https://wa.me/919985020218" target="_blank" style={{color:'#34D399',fontSize:13,textDecoration:'none'}}>📱 +91 99850 20218</a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/919985020218" target="_blank" rel="noopener noreferrer" className="whatsapp-fab" title="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.51 3.58 1.39 5.06L2 22l5.09-1.36C8.53 21.47 10.21 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="rgba(37,211,102,0.9)"/><path d="M17 14.38c-.22.56-1.14 1.06-1.78 1.2-.44.09-1 .16-2.84-.6-2.34-.96-3.88-3.36-4-3.52-.12-.16-.98-1.3-.98-2.48 0-1.18.62-1.76.86-2.02.22-.24.5-.34.66-.34.16 0 .32 0 .46.01.16.01.37-.06.58.45.22.52.74 1.7.81 1.84.07.14.11.3.01.48-.1.18-.15.28-.29.44-.14.16-.29.36-.41.48-.14.14-.29.29-.12.59.17.3.75 1.23 1.62 2.02 1.12 1.01 2.05 1.32 2.35 1.46.3.14.48.11.66-.09.18-.2.74-.86.94-1.16.2-.3.41-.24.68-.13.27.09 1.45.69 1.74.84.29.15.48.22.55.34.07.13-.28.65-1.5.21z" fill="white"/></svg>
+    </a>
+  </>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

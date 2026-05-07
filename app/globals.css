@@ -162,15 +162,15 @@ section {
   min-height: 260px;
 }
 
-.hero-stat-grid,
-.section-grid,
-.result-grid,
-.blog-grid,
-.case-grid,
-.feature-grid,
-.contact-grid {
-  display: grid;
-  gap: 20px;
+.hero-stat-grid > * p,
+.section-grid > * p,
+.result-grid > * p,
+.blog-grid > * p,
+.case-grid > * p,
+.feature-grid > * p,
+.contact-grid > * p {
+  line-height: 1.6;
+  word-break: break-word;
 }
 
 .hero-stat-grid {

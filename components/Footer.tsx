@@ -21,9 +21,11 @@ export default function Footer() {
           <div>
             <h4>Contact</h4>
             <a href="mailto:hello@sres.solutions">hello@sres.solutions</a>
+{/* 
             <a href="https://wa.me/919985020218" target="_blank" rel="noreferrer">
               +91 99850 20218
             </a>
+ */}
           </div>
         </div>
       </div>

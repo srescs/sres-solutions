@@ -64,7 +64,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+{/* 
       <section className="alt-section">
         <div className="container">
           <div className="content-grid">
@@ -92,7 +92,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
+*/}
       <section>
         <div className="container">
           <div className="section-heading">

@@ -32,10 +32,12 @@ export default function ContactPage() {
                   <strong>Email</strong>
                   <span>hello@sres.solutions</span>
                 </li>
+                {/* 
                 <li>
                   <strong>Phone</strong>
                   <span>+91 99850 20218</span>
-                </li>
+                </li>  
+                 */}
                 <li>
                   <strong>Location</strong>
                   <span>India · Global clients</span>
@@ -76,6 +78,7 @@ export default function ContactPage() {
                 hello@sres.solutions
               </a>
             </div>
+            /*
             <div className="card contact-card">
               <h3>WhatsApp</h3>
               <p>Message us directly for a fast response and quick scoping conversation.</p>
@@ -83,6 +86,7 @@ export default function ContactPage() {
                 Chat on WhatsApp
               </a>
             </div>
+          */
           </div>
         </div>
       </section>

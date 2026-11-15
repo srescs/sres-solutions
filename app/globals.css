@@ -432,82 +432,102 @@ a:hover > .btn-arrow {
   font-size: 0.9rem;
 }
 
-/* Hero visual: an abstract amber form with two proof chips */
+/* Hero visual: two client logo cards with a proof chip in front */
 .hero-visual {
   position: relative;
-  min-height: 440px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 460px;
 }
 
-.orb {
-  position: relative;
-  width: min(380px, 78%);
-  aspect-ratio: 1;
-  border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%;
-  background: radial-gradient(circle at 32% 28%, #fff6c9 0%, #ffe066 22%, #ffc82c 48%, #f0a500 78%, #c98200 100%);
-  box-shadow: inset -28px -36px 70px rgba(160, 96, 0, 0.45), inset 22px 26px 50px rgba(255, 255, 255, 0.55),
-    0 50px 90px rgba(255, 190, 30, 0.35);
-  animation: orb-morph 14s ease-in-out infinite;
-}
-
-.orb::before,
-.orb::after {
+.hero-visual::before {
   content: '';
   position: absolute;
+  inset: 12% 6%;
   border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 200, 44, 0.32), transparent 68%);
+  filter: blur(20px);
 }
 
-.orb::before {
-  inset: 22% 18% 20% 26%;
-  border-radius: 46% 54% 42% 58% / 55% 44% 56% 45%;
-  background: radial-gradient(circle at 36% 30%, #fff3b8 0%, #ffd23d 45%, #eaa100 100%);
-  box-shadow: -14px -16px 34px rgba(150, 90, 0, 0.38), inset 10px 12px 26px rgba(255, 255, 255, 0.5);
-  animation: orb-morph 10s ease-in-out infinite reverse;
+.logo-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 54%;
+  padding: 28px 20px 24px;
+  border-radius: 24px;
+  background: #ffffff;
+  color: #111013;
+  border: 1px solid rgba(17, 16, 19, 0.08);
+  box-shadow: 0 30px 70px rgba(17, 16, 19, 0.16);
+  transition: transform 0.35s ease;
 }
 
-.orb::after {
-  inset: 44% 36% 36% 44%;
-  background: radial-gradient(circle at 38% 32%, #fffbe3, #ffd84f 70%);
-  box-shadow: -6px -8px 18px rgba(150, 90, 0, 0.35);
+.logo-card img {
+  width: auto;
+  height: 132px;
+  object-fit: contain;
+  margin-bottom: 18px;
 }
 
-@keyframes orb-morph {
-  0%,
-  100% {
-    border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%;
-    transform: rotate(0deg) translateY(0);
-  }
-  50% {
-    border-radius: 44% 56% 46% 54% / 56% 44% 58% 42%;
-    transform: rotate(8deg) translateY(-10px);
-  }
+.logo-card.lameris {
+  top: 0;
+  right: 0;
+  transform: rotate(4deg);
+}
+
+.logo-card.meeteaze {
+  left: 0;
+  bottom: 0;
+  transform: rotate(-5deg);
+}
+
+.logo-card:hover {
+  transform: rotate(0deg) translateY(-6px);
+  z-index: 3;
+}
+
+.logo-card-stat {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.logo-card-note {
+  margin-top: 4px;
+  font-size: 0.86rem;
+  color: #5c5963;
 }
 
 .proof-chip {
   position: absolute;
+  left: 0;
+  top: 5%;
   z-index: 2;
   display: grid;
   gap: 2px;
-  max-width: 220px;
+  width: 42%;
   padding: 16px 18px;
   border-radius: 16px;
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  background: #111013;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 50px rgba(17, 16, 19, 0.3);
 }
 
-.proof-chip.one {
-  left: 0;
-  top: 12%;
+.proof-chip .proof-value {
+  color: #ffc82c;
 }
 
-.proof-chip.two {
-  right: 0;
-  bottom: 10%;
+.proof-chip .proof-label {
+  color: #d7d4dc;
+}
+
+.proof-chip .proof-source {
+  color: #a39fab;
 }
 
 .proof-value {
@@ -1547,9 +1567,8 @@ a.card:hover {
     transition: none;
   }
 
-  .orb,
-  .orb::before {
-    animation: none;
+  .logo-card {
+    transition: none;
   }
 }
 
@@ -1570,7 +1589,12 @@ a.card:hover {
   }
 
   .hero-visual {
-    min-height: 360px;
+    min-height: 440px;
+    max-width: 520px;
+  }
+
+  .logo-card img {
+    height: 104px;
   }
 
   .grid-4,

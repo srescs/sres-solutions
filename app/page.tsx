@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   aiCapabilities,
@@ -16,7 +17,7 @@ import { Arrow, CaseFeature, CtaBand, Faq, Testimonials } from '@/components/Sec
 import ServiceTabs from '@/components/ServiceTabs';
 
 export default function HomePage() {
-  const [cloudCost, onboarding] = caseStudies[0].results;
+  const [cloudCost] = caseStudies[0].results;
 
   return (
     <>
@@ -41,15 +42,19 @@ export default function HomePage() {
             </p>
           </div>
           <div className="hero-visual">
-            <div className="orb" aria-hidden="true" />
-            <div className="proof-chip one">
+            <div className="logo-card lameris">
+              <Image src="/work/lameris-logo.png" alt="Laméris" width={270} height={276} priority />
+              <span className="logo-card-stat">2 countries · 3 languages</span>
+              <span className="logo-card-note">Website built from scratch</span>
+            </div>
+            <div className="logo-card meeteaze">
+              <Image src="/work/meeteaze-logo.png" alt="MeetEaze" width={490} height={454} priority />
+              <span className="logo-card-stat">2 weeks</span>
+              <span className="logo-card-note">From idea to prototype</span>
+            </div>
+            <div className="proof-chip">
               <span className="proof-value">{cloudCost.value}</span>
               <span className="proof-label">lower cloud cost after an Azure to AWS migration</span>
-              <span className="proof-source">Mediminds</span>
-            </div>
-            <div className="proof-chip two">
-              <span className="proof-value">{onboarding.value}</span>
-              <span className="proof-label">customer onboarding time</span>
               <span className="proof-source">Mediminds</span>
             </div>
           </div>

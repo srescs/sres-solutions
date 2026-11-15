@@ -4,7 +4,7 @@ import { Arrow } from '@/components/Sections';
 export const metadata = {
   title: 'Contact SRES Solutions | Start with a 2-week audit or a fixed-price MVP',
   description:
-    'Tell us what you want to ship, cut or automate, and we will come back with a scoped, fixed-price proposal. Email hello@sres.solutions or WhatsApp +91 99850 20218.'
+    'Tell us what you want to ship, cut or automate, and we will come back with a scoped, fixed-price proposal. Email hello@sres.solutions .'
 };
 
 export default function ContactPage() {
@@ -35,12 +35,6 @@ export default function ContactPage() {
                 <li>
                   <strong>Email</strong>
                   <a href={`mailto:${company.email}`}>{company.email}</a>
-                </li>
-                <li>
-                  <strong>Phone and WhatsApp</strong>
-                  <a href={company.whatsapp} target="_blank" rel="noreferrer">
-                    {company.phone}
-                  </a>
                 </li>
                 <li>
                   <strong>Location</strong>
@@ -85,14 +79,7 @@ export default function ContactPage() {
                 {company.email}
               </a>
             </div>
-            <div className="card contact-card reveal">
-              <span className="numbered">03</span>
-              <h3>WhatsApp</h3>
-              <p>Message us directly for a quick scoping conversation.</p>
-              <a href={company.whatsapp} target="_blank" rel="noreferrer" className="btn-ghost">
-                Chat on WhatsApp
-              </a>
-            </div>
+
           </div>
         </div>
       </section>

@@ -8,8 +8,8 @@ export const company = {
   location: 'Bengaluru, India',
   serving: 'Serving Europe, North America and India',
   email: 'hello@sres.solutions',
-  phone: '+91 99850 20218',
-  whatsapp: 'https://wa.me/919985020218',
+  phone: '',
+  whatsapp: '',
   calendly: 'https://calendly.com/chaitanyareddy-pr'
 };
 
@@ -141,7 +141,7 @@ export const services: Service[] = [
       {
         title: 'Technologies',
         description:
-          'Java / Spring Boot, Node.js, TypeScript, Kafka, React Native, Android, iOS and SAP.'
+          'Java / Spring Boot, Node.js, TypeScript, Kafka, AWS, GCP, Multi Cloudm Firebase, Distributed Systems, React Native, Android, iOS and SAP.'
       },
       {
         title: 'Audit standards',
@@ -158,7 +158,7 @@ export const services: Service[] = [
   }
 ];
 
-export const clients = ['Mediminds', 'Laméris Group', 'MeetEaze', 'Dutch enterprises'];
+export const clients = ['Mediminds', 'Laméris Group', 'MeetEaze', 'Response - Dutch enterprises'];
 
 export type UseCase = {
   problem: string;

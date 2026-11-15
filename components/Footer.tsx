@@ -29,9 +29,6 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Get in touch</h4>
             <a href={`mailto:${company.email}`}>{company.email}</a>
-            <a href={company.whatsapp} target="_blank" rel="noreferrer">
-              {company.phone}
-            </a>
             <a href={company.calendly} target="_blank" rel="noreferrer">
               Book a call
             </a>

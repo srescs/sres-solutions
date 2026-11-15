@@ -1,95 +1,88 @@
+import { company, services } from '@/lib/content';
+import { Arrow } from '@/components/Sections';
+
 export const metadata = {
-  title: 'Contact SRES Solutions | Book a Free AI Strategy Call',
+  title: 'Contact SRES Solutions | Start with a 2-week audit or a fixed-price MVP',
   description:
-    'Get in touch with SRES Solutions for a free strategy call, email hello@sres.solutions, or WhatsApp +91 99850 20218.',
+    'Tell us what you want to ship, cut or automate, and we will come back with a scoped, fixed-price proposal. Email hello@sres.solutions .'
 };
 
 export default function ContactPage() {
   return (
-    <main>
+    <>
       <section className="hero-section">
         <div className="container hero-grid">
           <div>
-            <p className="section-label">Contact</p>
-            <h1>Book a free 45-minute AI strategy call.</h1>
+            <p className="section-label">Next step</p>
+            <h1 style={{ fontSize: 'clamp(2.3rem, 5vw, 3.8rem)' }}>Start with a 2-week audit or a fixed-price MVP.</h1>
             <p className="hero-copy">
-              Reach out to SRES Solutions for custom AI product delivery, automation, analytics, or governance support.
+              Tell us what you want to ship, cut or automate, and we will come back with a scoped, fixed-price
+              proposal.
             </p>
             <div className="hero-actions">
-              <a href="mailto:hello@sres.solutions" className="btn-primary">
-                Email hello@sres.solutions
+              <a href={company.calendly} target="_blank" rel="noreferrer" className="btn-primary">
+                Book a call <Arrow />
               </a>
-              <a href="https://wa.me/919985020218" target="_blank" rel="noreferrer" className="btn-ghost">
-                WhatsApp Us
+              <a href={`mailto:${company.email}`} className="btn-ghost">
+                {company.email}
               </a>
             </div>
           </div>
-          <div className="hero-card contact-card-panel">
+          <div className="panel">
             <div>
               <h3>Contact details</h3>
               <ul className="contact-list">
                 <li>
                   <strong>Email</strong>
-                  <span>hello@sres.solutions</span>
+                  <a href={`mailto:${company.email}`}>{company.email}</a>
                 </li>
-                {/* 
-                <li>
-                  <strong>Phone</strong>
-                  <span>+91 99850 20218</span>
-                </li>  
-                 */}
                 <li>
                   <strong>Location</strong>
-                  <span>India · Global clients</span>
+                  <span>
+                    {company.location} · {company.serving}
+                  </span>
                 </li>
               </ul>
             </div>
             <div>
-              <h3>Need help with...</h3>
+              <h3>We can help with</h3>
               <ul className="feature-list">
-                <li>AI strategy and roadmaps</li>
-                <li>Custom AI and LLM apps</li>
-                <li>Workflow automation</li>
-                <li>Data engineering and compliance</li>
+                {services.map((service) => (
+                  <li key={service.slug}>{service.title}</li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section>
+      <section className="section-raised">
         <div className="container">
-          <div className="section-heading">
-            <p className="section-label">How to connect</p>
-            <h2>Fastest ways to start your AI transformation.</h2>
+          <div className="section-heading reveal">
+            <p className="section-label">How to reach us</p>
+            <h2>Three ways to start</h2>
           </div>
           <div className="contact-grid">
-            <div className="card contact-card">
+            <div className="card contact-card reveal">
+              <span className="numbered">01</span>
               <h3>Book a call</h3>
-              <p>Schedule a free AI strategy session so we can scope the right solution for your business.</p>
-              <a href="https://calendly.com/chaitanyareddy-pr" target="_blank" rel="noreferrer" className="btn-primary">
+              <p>Pick a time and walk us through what you want to ship, cut or automate.</p>
+              <a href={company.calendly} target="_blank" rel="noreferrer" className="btn-primary">
                 Schedule on Calendly
               </a>
             </div>
-            <div className="card contact-card">
+            <div className="card contact-card reveal">
+              <span className="numbered">02</span>
               <h3>Email us</h3>
-              <p>Send details about your AI opportunity, current systems, and business goals.</p>
-              <a href="mailto:hello@sres.solutions" className="btn-ghost">
-                hello@sres.solutions
+              <p>Send your current stack and goals, and we will reply with a scoped proposal.</p>
+              <a href={`mailto:${company.email}`} className="btn-ghost">
+                {company.email}
               </a>
             </div>
-            /*
-            <div className="card contact-card">
-              <h3>WhatsApp</h3>
-              <p>Message us directly for a fast response and quick scoping conversation.</p>
-              <a href="https://wa.me/919985020218" target="_blank" rel="noreferrer" className="btn-primary">
-                Chat on WhatsApp
-              </a>
-            </div>
-          */
+
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

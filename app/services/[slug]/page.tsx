@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { services } from '@/lib/content';
+import { Arrow, CtaBand } from '@/components/Sections';
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -12,6 +13,17 @@ type Props = {
   };
 };
 
+export function generateMetadata({ params }: Props) {
+  const service = services.find((item) => item.slug === params.slug);
+  if (!service) {
+    return {};
+  }
+  return {
+    title: `${service.title} | SRES Solutions`,
+    description: service.description
+  };
+}
+
 export default function ServicePage({ params }: Props) {
   const service = services.find((item) => item.slug === params.slug);
   if (!service) {
@@ -19,67 +31,63 @@ export default function ServicePage({ params }: Props) {
   }
 
   return (
-    <main>
-      <section className="hero-section">
-        <div className="container hero-grid">
-          <div>
-            <p className="section-label">{service.badge}</p>
-            <h1>{service.title}</h1>
-            <p className="hero-copy">{service.description}</p>
-            <div className="hero-actions">
-              <Link href="/contact" className="btn-primary">
-                Book a Call
-              </Link>
-              <Link href="/services" className="btn-ghost">
-                All Services
-              </Link>
-            </div>
-          </div>
-          <div className="hero-card">
-            <div className="stat-grid">
-              {service.stats.map((stat) => (
-                <div key={stat.label} className="stat-item">
-                  <span>{stat.value}</span>
-                  <p>{stat.label}</p>
-                </div>
-              ))}
-            </div>
-            <p className="hero-copy">{service.cta}</p>
+    <>
+      <section className="hero-section page-hero">
+        <div className="container">
+          <p className="section-label">{service.title}</p>
+          <h1>{service.hero}</h1>
+          <p className="hero-copy">{service.description}</p>
+          <div className="hero-actions">
+            <Link href="/contact" className="btn-primary">
+              Start a project <Arrow />
+            </Link>
+            <Link href="/services" className="btn-ghost">
+              All services
+            </Link>
           </div>
         </div>
       </section>
 
-      <section>
+      <section style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="section-heading">
-            <p className="section-label">What we deliver</p>
-            <h2>Core capabilities for this service.</h2>
-          </div>
-          <div className="feature-grid">
-            {service.highlights.map((item) => (
-              <div key={item.title} className="card feature-card">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+          <div className="stat-grid cols-3 reveal">
+            {service.stats.map((stat) => (
+              <div key={stat.label} className="stat-item">
+                <span className="stat-value">{stat.value}</span>
+                <span className="stat-label">{stat.label}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="cta-section">
-        <div className="container cta-card">
-          <div>
-            <p className="section-label">Next step</p>
-            <h2>Start with a free AI discovery call.</h2>
-            <p className="hero-copy">We’ll scope the right delivery approach for your enterprise and show you the first practical milestones.</p>
+      <section className="section-raised">
+        <div className="container">
+          <div className="section-heading reveal">
+            <p className="section-label">What you get</p>
+            <h2>{service.summary}</h2>
           </div>
-          <div className="cta-actions">
-            <Link href="/contact" className="btn-primary">
-              Schedule a Call
+          <div className="grid-3">
+            {service.highlights.map((item, index) => (
+              <div key={item.title} className="card reveal">
+                <span className="numbered">0{index + 1}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+          <p className="note-line reveal">
+            Proof: {service.proof}. {service.cta}{' '}
+            <Link href="/case-studies" className="case-link" style={{ marginTop: 0 }}>
+              See the case studies
             </Link>
-          </div>
+          </p>
         </div>
       </section>
-    </main>
+
+      <div style={{ paddingTop: 104 }}>
+        <CtaBand />
+      </div>
+    </>
   );
 }

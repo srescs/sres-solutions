@@ -1,50 +1,70 @@
 import Link from 'next/link';
-import { services } from '@/lib/content';
+import { engagement, services } from '@/lib/content';
+import { Arrow, CtaBand, ServiceIcon } from '@/components/Sections';
 
 export const metadata = {
-  title: 'Services | SRES Solutions — AI Strategy, Development, Integration, Data and Governance',
+  title: 'Services | SRES Solutions — Apps, AI-native development, agents and audits',
   description:
-    'Explore SRES Solutions services for AI strategy, custom AI development, integration, data engineering, analytics, and governance.',
+    'Web and mobile apps, AI-native development, AI automation and agents, and technical audits with legacy modernization. Fixed price or outcome-based.'
 };
 
 export default function ServicesPage() {
   return (
-    <main>
-      <section className="hero-section">
-        <div className="container hero-grid">
-          <div>
-            <p className="section-label">Services</p>
-            <h1>AI services built for enterprise delivery.</h1>
-            <p className="hero-copy">
-              Choose the service that matches your stage: strategy, custom build, integration, data operations, analytics or governance.
-            </p>
-          </div>
-          <div className="hero-card">
-            <p className="hero-copy">Each engagement begins with business outcomes, not technology. We map AI to measurable KPIs and deploy production-ready systems.</p>
-          </div>
+    <>
+      <section className="hero-section page-hero">
+        <div className="container">
+          <p className="section-label">What we do</p>
+          <h1>Four services, one senior team</h1>
+          <p className="hero-copy">
+            Build a product, put AI to work, or check a stack before you invest. Every engagement is fixed price or
+            outcome-based, and led by senior engineers.
+          </p>
         </div>
       </section>
 
-      <section>
+      <section style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="section-heading">
-            <p className="section-label">Our services</p>
-            <h2>Choose a service path for your AI transformation.</h2>
-          </div>
           <div className="service-grid">
             {services.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="card service-card">
+              <Link key={service.slug} href={`/services/${service.slug}`} className="card service-card reveal">
+                <ServiceIcon name={service.icon} />
                 <div>
-                  <span className="badge badge-pill">{service.badge}</span>
                   <h3>{service.title}</h3>
-                  <p>{service.summary}</p>
+                  <p>{service.description}</p>
                 </div>
-                <span className="service-link">Learn more →</span>
+                <div className="service-card-foot">
+                  <span>Proof: {service.proof}</span>
+                  <span className="service-link">
+                    Learn more <Arrow />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
-    </main>
+
+      <section className="section-raised">
+        <div className="container">
+          <div className="section-heading reveal">
+            <p className="section-label">How we work with you</p>
+            <h2>Fixed price or outcome-based, led by senior engineers</h2>
+          </div>
+          <div className="grid-3">
+            {engagement.map((item, index) => (
+              <div key={item.title} className="card reveal">
+                <span className="numbered">0{index + 1}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div style={{ paddingTop: 104 }}>
+        <CtaBand />
+      </div>
+    </>
   );
 }

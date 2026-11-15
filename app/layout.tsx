@@ -1,30 +1,32 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Syne, DM_Sans } from 'next/font/google';
+import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Reveal from '@/components/Reveal';
 
-const syne = Syne({
+const display = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['600', '700', '800'],
-  variable: '--font-syne'
+  variable: '--font-display'
 });
 
-const dmSans = DM_Sans({
+const body = Inter({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-dm-sans'
+  variable: '--font-body'
 });
+
+const title = 'SRES Solutions | AI-native engineering, built to ship';
+const description =
+  'Web and mobile apps, AI automation and agents, technical audits and legacy modernization. Fixed price, or paid on outcomes. Bengaluru, serving Europe, North America and India.';
 
 export const metadata: Metadata = {
-  title: 'SRES Solutions | AI-Native Software & AI Transformation Company — India',
-  description:
-    'SRES Solutions helps enterprises adopt AI with custom software, automation, analytics, data engineering, and governance.',
+  title,
+  description,
   metadataBase: new URL('https://sres.solutions'),
   openGraph: {
-    title: 'SRES Solutions | AI-Native Software & AI Transformation Company — India',
-    description:
-      'SRES Solutions helps enterprises adopt AI with custom software, automation, analytics, data engineering, and governance.',
+    title,
+    description,
     type: 'website',
     url: 'https://sres.solutions/',
     siteName: 'SRES Solutions',
@@ -32,20 +34,29 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SRES Solutions | AI-Native Software & AI Transformation Company — India',
-    description:
-      'SRES Solutions helps enterprises adopt AI with custom software, automation, analytics, data engineering, and governance.',
+    title,
+    description,
     images: ['https://sres.solutions/og-image.png']
   }
 };
 
+// Applies the saved theme before first paint so the page never flashes.
+const themeScript = `try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t==='dark'?'dark':'light'}catch(e){}`;
+
 export default function RootLayout({ children }: { readonly children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable}`} suppressHydrationWarning>
+    <html lang="en" data-theme="light" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <noscript>
+          <style>{`.reveal{opacity:1;transform:none}`}</style>
+        </noscript>
+      </head>
       <body>
         <Header />
         <main>{children}</main>
         <Footer />
+        <Reveal />
       </body>
     </html>
   );

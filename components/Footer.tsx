@@ -1,30 +1,47 @@
 import Link from 'next/link';
+import Logo from '@/components/Logo';
+import { company, services } from '@/lib/content';
 
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <div className="container footer-grid">
-        <div>
-          <Link href="/" className="nav-logo footer-logo">
-            <div className="nav-logo-mark">SRES</div>
-            <span>Solutions</span>
-          </Link>
-          <p className="footer-copy">AI-native software and transformation services for enterprise teams.</p>
-        </div>
-        <div className="footer-links">
+      <div className="container">
+        <div className="footer-grid">
           <div>
-            <h4>Explore</h4>
-            <Link href="/services">Services</Link>
-            <Link href="/case-studies">Case Studies</Link>
-            <Link href="/blog">Blog</Link>
+            <Logo />
+            <p className="footer-copy">{company.tagline} Fixed price, or paid on outcomes.</p>
           </div>
-          <div>
-            <h4>Contact</h4>
-            <a href="mailto:hello@sres.solutions">hello@sres.solutions</a>
-            <a href="https://wa.me/919985020218" target="_blank" rel="noreferrer">
-              +91 99850 20218
+          <div className="footer-col">
+            <h4>Services</h4>
+            {services.map((service) => (
+              <Link key={service.slug} href={`/services/${service.slug}`}>
+                {service.title}
+              </Link>
+            ))}
+          </div>
+          <div className="footer-col">
+            <h4>Company</h4>
+            <Link href="/use-cases">Use cases</Link>
+            <Link href="/case-studies">Work</Link>
+            <Link href="/blog">Insights</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+          <div className="footer-col">
+            <h4>Get in touch</h4>
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+            <a href={company.whatsapp} target="_blank" rel="noreferrer">
+              {company.phone}
+            </a>
+            <a href={company.calendly} target="_blank" rel="noreferrer">
+              Book a call
             </a>
           </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} SRES Solutions</span>
+          <span>
+            {company.location} · {company.serving}
+          </span>
         </div>
       </div>
     </footer>

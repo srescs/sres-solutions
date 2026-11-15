@@ -1,60 +1,39 @@
-import Link from 'next/link';
 import { caseStudies } from '@/lib/content';
+import { CaseFeature, CtaBand, Testimonials } from '@/components/Sections';
 
 export const metadata = {
-  title: 'Case Studies | SRES Solutions — Real AI Results Across Industries',
+  title: 'Work | SRES Solutions — Case studies in healthcare, enterprise and consumer products',
   description:
-    'Explore SRES Solutions case studies and AI outcomes for finance, healthcare, manufacturing, and enterprise operations.',
+    'How SRES Solutions cut cloud cost by 40% for Mediminds, took Laméris digital in 2 countries and 3 languages, and is building MeetEaze with AI-native development.'
 };
 
 export default function CaseStudiesPage() {
   return (
-    <main>
-      <section className="hero-section">
-        <div className="container hero-grid">
-          <div>
-            <p className="section-label">Case Studies</p>
-            <h1>Real AI outcomes delivered for enterprise teams.</h1>
-            <p className="hero-copy">
-              Read how SRES Solutions helped companies reduce fraud, reclaim hours, and improve operational resilience.
-            </p>
-          </div>
-          <div className="hero-card">
-            <p className="hero-copy">
-              Each engagement is designed to move beyond pilots and deliver measurable business results.
-            </p>
-          </div>
+    <>
+      <section className="hero-section page-hero">
+        <div className="container">
+          <p className="section-label">Where we have delivered</p>
+          <h1>Healthcare, enterprise and consumer products</h1>
+          <p className="hero-copy">
+            Named clients and measured results, from a hospital information system in Bengaluru to a 115-year-old
+            MedTech brand in the Netherlands.
+          </p>
         </div>
       </section>
 
-      <section>
-        <div className="container">
-          <div className="section-heading">
-            <p className="section-label">Results</p>
-            <h2>Case studies with clear ROI and real adoption.</h2>
-          </div>
-          <div className="case-grid">
-            {caseStudies.map((item) => (
-              <div key={item.id} className="card case-card">
-                <span className="badge badge-pill">{item.industry}</span>
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
-                <div className="result-grid">
-                  {item.results.map((result) => (
-                    <div key={result.label} className="result-item">
-                      <strong>{result.value}</strong>
-                      <span>{result.label}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link href="/contact" className="btn-ghost">
-                  Talk to Us
-                </Link>
-              </div>
-            ))}
-          </div>
+      <section style={{ paddingTop: 0 }}>
+        <div className="container case-list">
+          {caseStudies.map((item) => (
+            <CaseFeature key={item.id} item={item} />
+          ))}
         </div>
       </section>
-    </main>
+
+      <Testimonials />
+
+      <div style={{ paddingTop: 104 }}>
+        <CtaBand />
+      </div>
+    </>
   );
 }

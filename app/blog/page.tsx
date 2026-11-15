@@ -1,58 +1,51 @@
 import Link from 'next/link';
 import { blogPosts } from '@/lib/content';
+import { Arrow } from '@/components/Sections';
 
 export const metadata = {
-  title: 'Blog & Resources | SRES Solutions — AI Insights for Enterprise Leaders',
-  description:
-    'Practical AI insights, transformation playbooks, and research for enterprise leaders from SRES Solutions.',
+  title: 'Insights | SRES Solutions',
+  description: 'Practical notes on AI-native engineering, agents, audits and modernization from the SRES Solutions team.'
 };
 
 export default function BlogPage() {
   return (
-    <main>
-      <section className="hero-section">
-        <div className="container hero-grid">
-          <div>
-            <p className="section-label">Blog</p>
-            <h1>AI insights for enterprise leaders and engineering teams.</h1>
-            <p className="hero-copy">
-              Explore practical articles, playbooks, and frameworks from the SRES Solutions team.
-            </p>
-          </div>
-          <div className="hero-card">
-            <p className="hero-copy">
-              Our writing focuses on AI strategy, LLM adoption, governance, data engineering, and real-world delivery.
-            </p>
-          </div>
+    <>
+      <section className="hero-section page-hero">
+        <div className="container">
+          <p className="section-label">Insights</p>
+          <h1>Notes from the team that ships</h1>
+          <p className="hero-copy">
+            Practical writing on AI-native engineering, agents, audits and modernization.
+          </p>
         </div>
       </section>
 
-      <section>
+      <section style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="section-heading">
-            <p className="section-label">Featured articles</p>
-            <h2>Fresh thinking for AI transformation.</h2>
-          </div>
           <div className="blog-grid">
             {blogPosts.map((post) => (
-              <Link key={post.id} href="#" className="card blog-card">
-                <span className="badge badge-pill">{post.tag}</span>
+              <article key={post.id} className="card blog-card reveal">
+                <span className="badge" style={{ alignSelf: 'flex-start' }}>
+                  {post.tag}
+                </span>
                 <h3>{post.title}</h3>
                 <p>{post.excerpt}</p>
                 <div className="blog-meta">
                   <span>{post.author}</span>
-                  <span>{post.readTime}</span>
+                  <span>
+                    {post.date} · {post.readTime}
+                  </span>
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
           <div className="blog-footer-cta">
             <Link href="/contact" className="btn-primary">
-              Talk to us about a topic
+              Talk to us about a topic <Arrow />
             </Link>
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }
